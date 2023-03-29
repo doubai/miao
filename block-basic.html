@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>block-basic</title>
+  <style>
+  div:first-child{background-color: aquamarine;}
+  div p.a{font-size:20px;
+          width:600px;
+          margin:auto;}
+  div p.b,.c{overflow: auto;
+             width:600px;
+             height:80px;
+             font-size: 20px;
+             margin:auto;
+             padding-top:10px;
+             padding-bottom:20px;
+             }
+  div.d{margin:auto;
+        margin-bottom:20px;
+        margin-top:20px;
+        max-width:600px;
+        padding:0 10px;
+        border:1px solid;
+
+        }
+  div.space{background-color: pink;
+            height:40px;}
+  div.space:hover{margin-left:-10px;
+                  margin-right:-10px;}
+  div.三角形{width:0px;
+            height:0px;
+            border-width:100px 100px  100px 100px;
+            border-style:solid solid solid solid;
+            border-color: orange transparent transparent transparent;
+            transform: rotate(180deg);
+            margin:0 auto;}
+  </style>
+</head>
+<body>
+  <div>
+<p class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, earum corporis. Ullam deleniti perspiciatis aliquam officiis hic, minus, eius repellat illo sit quis quod tempore dolores porro provident nisi voluptatum.
+</p>
+</div>
+<div class="d">
+  <p class="b">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis repudiandae recusandae natus sapiente quos eos praesentium delectus possimus veniam eaque impedit, voluptate doloribus blanditiis fugiat quam libero temporibus qui voluptatum.
+  </p>
+  <div class="space"></div>
+  <p class="c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit adipisci voluptatibus et illo, quia doloremque nulla. Minus quis, id natus dolor ipsam iusto cumque non magnam, nemo numquam iste facere.
+  </p>
+</div>
+<div class="三角形"></div>
+</body>
+</html>

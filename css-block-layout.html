@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css-block-layout</title>
+  <style>
+  body{margin:0;
+       }
+  #top{background-color:black;}
+  div.a{color:white;
+        font-size:20px;
+        margin:auto;
+        width:600px;
+       }
+  div.b{width:600px;
+        background-color: white;
+        margin:auto;
+        font-size:20px;
+        padding-top:20px;
+        padding-bottom:20px;}
+  /*宽180高40包含边框，水平间隙30px，垂直间隙15px，边框宽度3px*/
+  ul.c{margin:0 auto;
+        width:600px;
+      padding:0;}
+  ul.c div{box-sizing: border-box;
+            background-color:bisque;
+            font-size:20px;
+            width:180px;
+            height:40px;
+            border: 3px solid black;
+            margin-bottom:15px;
+            }
+
+  .c div:hover{background-color:red;}
+
+  .c div:nth-child(n+5){margin-left:210px;
+                        }
+  .c div:nth-child(n+9){margin-left:420px;
+                        }
+  .c div:nth-child(4n+5){margin-top:-220px;}
+    .links{list-style: none;
+         width:600px;
+         margin:auto;
+         padding:0;
+         overflow: hidden;
+         }
+  .links li{border-bottom:1px dotted;
+            margin-bottom:-1px;}
+  .bottom{
+          background-color:aqua;
+          text-align: center;
+          }
+
+  </style>
+</head>
+<body>
+<div id="top">
+<div class="a">
+  hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果
+</div>
+</div>
+<div id="center">
+<div class="b">
+  页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+</div>
+<ul class="c">
+<div>大箱子</div>
+<div>大桌子</div>
+<div>大黑板</div>
+<div>大房子</div>
+<div>1香蕉</div>
+<div>1水壶</div>
+<div>1粉笔</div>
+<div>1风扇</div>
+<div>2苹果</div>
+<div>2电脑</div>
+<div>2投影</div>
+<div>2椅子</div>
+</ul>
+<ul class="links">
+  <li>link</li>
+  <li>link</li>
+  <li>link</li>
+  <li>link</li>
+  <li>link</li>
+</ul>
+</div>
+<div class="bottom">
+  <div class="d">&copy;版权所有</div>
+  <div class="e">本页所有元素均使用块元素</div>
+</div>
+</body>
+</html>
