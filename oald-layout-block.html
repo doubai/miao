@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
+
   <title>oald-layout-block</title>
   <style>
 *{margin:0;
   padding:0;}
-  body{min-width: 1000px;}
+  body{min-width: 1000px;
+       box-sizing: border-box;}
   .a{background-color: aqua;
      width:180px;
      height:100%;
@@ -31,10 +32,11 @@
     margin-right: 400px;
      margin-top:calc(-100vh - 3px);
      background-color: bisque;
+
      height:100%;
      width:auto;
      border-right: 1px solid;
-     min-width:600px;}
+    }
   .b h2{border-bottom: 1px solid;
         padding-left: 20px;}
   .b ul{margin-left:30px;
