@@ -6,17 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>block-basic</title>
   <style>
-  div:first-child{background-color: aquamarine;}
+    body{margin:20px;
+        }
+  div:first-child{background-color: aquamarine;
+                  min-width: 600px;}
   div p.a{font-size:20px;
-          width:600px;
-          margin:auto;}
+          width: 600px;
+          margin:auto;
+          }
   div p.b,.c{overflow: auto;
-             width:600px;
+             width:auto;
              height:80px;
              font-size: 20px;
              margin:auto;
-             padding-top:10px;
-             padding-bottom:20px;
+
              }
   div.d{margin:auto;
         margin-bottom:20px;
@@ -24,7 +27,7 @@
         max-width:600px;
         padding:0 10px;
         border:1px solid;
-
+        box-sizing: border-box;
         }
   div.space{background-color: pink;
             height:40px;}

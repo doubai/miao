@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>oald-layout-inline</title>
+  <style>
+    html,body {
+      margin: 0;
+      font-size: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+
+
+    /*one*/
+    .one {
+      background-color: aqua;
+      display: inline-block;
+      width: 180px;
+      height: 100%;
+      font-size: 16px;
+    }
+
+    h1.词库 {
+      text-align: center;
+      color: red;
+    }
+
+    div {
+      display: flow-root;
+      box-sizing: border-box;
+      height: 120px;
+    }
+
+    input {
+      width: 120px;
+      margin-left: 10px;
+    }
+
+    button {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    .a {
+      width: 100%;
+      height: calc(100% - 120px);
+
+      overflow: auto;
+      display: block;
+    }
+
+    .a a {
+      display: block;
+      text-align: center;
+    }
+    /* two */
+    .two{background-color: blue;
+         display:inline-block;
+         height:100%;
+         width:calc(100% - 580px);
+         /* 基线与行框顶部对齐 */
+         vertical-align: top;
+        }
+    .three,.four{background-color: pink;
+                 display: inline-block;
+                 height:100%;
+                 width:200px;
+                 border-left: 1px solid;
+                 /* 宽高等于border-box宽高 */
+                 box-sizing: border-box;
+                 vertical-align: top;
+                 font-size: 16px;}
+   h1{display:block;
+
+      font-size: 16px;
+      height:20px;
+      margin:0;
+      }
+   .two div{height:calc(100% - 20px);
+             font-size: 16px;
+             overflow-y: auto;
+             }
+
+  </style>
+</head>
+
+<body>
+  <span class="one">
+    <div>
+      <h1 class="词库">词&nbsp;库</h1>
+      <input type="text">
+      <button></button>
+    </div>
+    <span class="a"><a href="">word1</a><a href="">word2</a><a href="">word3</a><a href="">word4</a><a
+        href="">word5</a><a href="">word6</a><a href="">word7</a><a href="">word8</a><a href="">word9</a><a
+        href="">word10</a><a href="">word11</a><a href="">word12</a><a href="">word13</a><a href="">word14</a><a
+        href="">word15</a><a href="">word16</a><a href="">word17</a><a href="">word18</a><a href="">word19</a><a
+        href="">word20</a><a href="">word21</a><a href="">word22</a><a href="">word23</a><a href="">word24</a><a
+        href="">word25</a><a href="">word26</a><a href="">word27</a><a href="">word28</a><a href="">word29</a><a
+        href="">word30</a><a href="">word31</a><a href="">word32</a><a href="">word33</a><a href="">word34</a><a
+        href="">word35</a><a href="">word36</a><a href="">word37</a><a href="">word38</a><a href="">word39</a><a
+        href="">word40</a><a href="">word41</a><a href="">word42</a><a href="">word43</a><a href="">word44</a><a
+        href="">word45</a><a href="">word46</a><a href="">word47</a><a href="">word48</a><a href="">word49</a><a
+        href="">word50</a><a href="">word51</a><a href="">word52</a><a href="">word53</a><a href="">word54</a><a
+        href="">word55</a><a href="">word56</a><a href="">word57</a><a href="">word58</a><a href="">word59</a><a
+        href="">word60</a></span>
+  </span>
+  <span class="two">
+  <h1>Lorem, ipsum.</h1>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda rem hic atque minima fugit autem distinctio iusto rerum a quaerat nam provident veniam maxime, asperiores cumque totam voluptate? Fuga, commodi.
+    Dignissimos, quisquam sunt? Magnam dolor, repellendus assumenda veniam autem ducimus recusandae expedita laborum alias culpa eos fuga libero delectus accusamus soluta ullam corporis! Consequatur dolor, repellat enim eum culpa eos.
+    Cumque magni quasi nihil delectus, unde consequuntur nemo est quae voluptatum accusantium nobis libero tempora tempore ipsam sunt possimus maxime neque. Nemo harum ratione itaque quae earum voluptatem, natus voluptatibus?
+    Et dolore voluptates, possimus in, veniam necessitatibus aperiam quia ducimus ratione fugit laborum obcaecati, quaerat totam laboriosam. Pariatur, saepe labore nihil dolor, quam libero laboriosam neque voluptatum quas quaerat consectetur?
+    Atque, quae impedit, aliquid officia adipisci eaque, velit ducimus sint recusandae reprehenderit in accusamus obcaecati repellendus beatae debitis eligendi placeat saepe officiis corrupti ratione soluta earum aspernatur! Corporis, vitae veniam?
+    Adipisci facilis non laboriosam, dolore quia quae expedita, illum consequatur quos consequuntur perferendis mollitia ea cum impedit. Ut atque ex veritatis quisquam ipsam voluptatibus? Quaerat ipsam dicta enim neque et.
+    Reprehenderit voluptates hic eaque. Nostrum ducimus consequatur corporis voluptatibus temporibus quidem iure, eos nesciunt. Incidunt, consequatur! Animi beatae aliquid quia minus esse ipsa, nostrum, quos ut, ducimus nihil rem velit.
+    Laboriosam sequi aspernatur nobis, et ad quasi cum magnam debitis labore, eveniet officia! Quis, necessitatibus? Modi cum amet voluptates esse delectus fugit, architecto consectetur! Odit omnis a quae laborum suscipit?
+    Recusandae architecto, esse dolorem totam, officia placeat, eaque assumenda voluptatem doloribus itaque corporis facilis accusantium neque? Voluptate dignissimos similique minus, ipsam, consequatur obcaecati sapiente accusamus illo dolorum praesentium saepe id?
+    Molestias consectetur, totam praesentium impedit explicabo illum iure, possimus maxime fugit officia vel recusandae natus nostrum numquam qui neque ut hic sed animi, ullam illo! Minus molestiae ipsum temporibus vel!
+    Quos voluptate nulla, iure aut dicta dignissimos ut laboriosam eos perspiciatis iste nihil exercitationem modi aperiam obcaecati quisquam ducimus quasi totam omnis asperiores labore enim porro. Ex minima alias quae.
+    Consectetur dolores eaque in cum eum ad nostrum deserunt suscipit culpa natus dolore, debitis praesentium amet laudantium qui dolorem! Fuga, et. Praesentium quidem autem magnam maxime distinctio facilis, eius accusamus?
+    Debitis quisquam aliquam optio odit voluptas molestiae amet ab porro suscipit accusantium ullam, autem maxime, non repellat quis sed eius consectetur ducimus numquam est incidunt quod asperiores. In, natus eveniet?
+    Corrupti deleniti, quod porro officiis totam dolores asperiores maiores quo soluta sit facilis neque nostrum nulla quas culpa aperiam ipsa, ab, similique expedita odit molestias iste autem eveniet voluptate. Quas.
+    Praesentium nam, molestias eaque suscipit, enim rerum distinctio similique recusandae, ipsa dolorum adipisci impedit quod blanditiis nisi laboriosam nemo amet vel veniam consequatur et quisquam doloribus eius reiciendis ratione. Facere!
+    Voluptate, asperiores totam quia minima, officiis recusandae odio dolorum tempora ipsam fugiat iure amet laboriosam maiores repellendus corrupti sed nisi delectus minus sunt, aperiam ad enim perspiciatis quod. Hic, obcaecati.
+    Enim aspernatur cumque doloremque veritatis, nesciunt error nemo incidunt. Unde ipsam cumque, dolore ipsum optio veniam nihil ea, modi, alias dolores veritatis sequi eaque nisi magnam odit quos adipisci dolorum.
+    Architecto quos minima est dicta magni recusandae blanditiis, eaque excepturi assumenda mollitia voluptas quia inventore! Earum tenetur suscipit aperiam rerum adipisci mollitia dignissimos praesentium, nemo ea! Ipsam cupiditate vel nisi?
+    Aut doloremque optio magnam natus minima soluta vitae quam corporis non culpa. Sunt natus debitis unde modi sed animi. Repellat at id reprehenderit quis fugit ea dignissimos soluta. Officia, repudiandae!
+    Culpa alias quos temporibus id ipsum corporis quia magnam. Magni nisi consequuntur, obcaecati asperiores commodi officia impedit iste aliquam hic, excepturi amet doloribus harum in reprehenderit numquam! Sunt, perspiciatis accusantium.
+  </div>
+  </span>
+  <span class="three">
+   Lorem, ipsum.
+  </span>
+  <span class="four">
+   Lorem, ipsum.
+  </span>
+</body>
+
+</html>
