@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oald-layout-position</title>
+  <style>
+   html,body{
+    height:100%;
+    width: 100%;
+    margin: 0;
+
+    }
+    body{
+      font-size: 16px;
+    }
+   .header{
+    background-color: bisque;
+    height:100%;
+    width: 15%;
+    position:fixed ;
+    top:0;
+    border-right: 4px solid;
+    min-width:180px;
+
+    }
+    .title{
+    width:100%;
+    height: 76px;
+    border-bottom: 4px solid;
+    text-align: center;
+    }
+    .title1{
+      margin: 0;
+      width:100%;
+    }
+    input{
+      width:55%;
+      margin:10px;
+
+    }
+    button{
+
+
+      vertical-align: middle;
+    }
+
+   .list1{
+    position: absolute;
+    top:80px;
+    width:100%;
+    padding:0;
+    text-align: center;
+    overflow: auto;
+    height:calc(100% - 80px);
+    margin:0;
+   }
+   .main{
+    background-color:azure;
+    position: fixed;
+    left:15%;
+    top:0;
+    height: 100%;
+    width:calc(55% - 8px);
+    border-left: 4px solid;
+    }
+
+   .main-bottom{
+    position:relative;
+    top:80px;
+
+
+    overflow: auto;
+    list-style: decimal;
+    margin: 0;
+    height:calc(100% - 80px);
+
+   }
+
+   .last1{
+    position: fixed;
+    top:0;
+    right:15%;
+    height:100%;
+    width:15%;
+    background-color: beige;
+    border-left: 4px solid;
+   }
+   .last2{
+    position: fixed;
+    top:0;
+    right:0;
+    height:100%;
+    width:15%;
+    background-color: beige;
+    border-left: 4px solid;
+   }
+   p{
+    border-bottom: 4px solid;
+    font-size: 20px;
+    font-weight: bold;
+    position:absolute;
+    height: 80px;
+    width:100%;
+    margin: 0;
+    text-indent:10px;
+    box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="title">
+  <h2 class="title1">OALD Se7en</h2>
+  <input type="text"><button>搜索</button>
+  </div>
+  <ul class="list1">
+    <li><a href="">word1</a></li>
+    <li><a href="">word2</a></li>
+    <li><a href="">word3</a></li>
+    <li><a href="">word4</a></li>
+    <li><a href="">word5</a></li>
+    <li><a href="">word6</a></li>
+    <li><a href="">word7</a></li>
+    <li><a href="">word8</a></li>
+    <li><a href="">word9</a></li>
+    <li><a href="">word10</a></li>
+    <li><a href="">word11</a></li>
+    <li><a href="">word12</a></li>
+    <li><a href="">word13</a></li>
+    <li><a href="">word14</a></li>
+    <li><a href="">word15</a></li>
+    <li><a href="">word16</a></li>
+    <li><a href="">word17</a></li>
+    <li><a href="">word18</a></li>
+    <li><a href="">word19</a></li>
+    <li><a href="">word20</a></li>
+    <li><a href="">word21</a></li>
+    <li><a href="">word22</a></li>
+    <li><a href="">word23</a></li>
+    <li><a href="">word24</a></li>
+    <li><a href="">word25</a></li>
+    <li><a href="">word26</a></li>
+    <li><a href="">word27</a></li>
+    <li><a href="">word28</a></li>
+    <li><a href="">word29</a></li>
+    <li><a href="">word30</a></li>
+    <li><a href="">word31</a></li>
+    <li><a href="">word32</a></li>
+    <li><a href="">word33</a></li>
+    <li><a href="">word34</a></li>
+    <li><a href="">word35</a></li>
+    <li><a href="">word36</a></li>
+    <li><a href="">word37</a></li>
+    <li><a href="">word38</a></li>
+    <li><a href="">word39</a></li>
+    <li><a href="">word40</a></li>
+    <li><a href="">word41</a></li>
+    <li><a href="">word42</a></li>
+    <li><a href="">word43</a></li>
+    <li><a href="">word44</a></li>
+    <li><a href="">word45</a></li>
+    <li><a href="">word46</a></li>
+    <li><a href="">word47</a></li>
+    <li><a href="">word48</a></li>
+    <li><a href="">word49</a></li>
+    <li><a href="">word50</a></li>
+    <li><a href="">word51</a></li>
+    <li><a href="">word52</a></li>
+    <li><a href="">word53</a></li>
+    <li><a href="">word54</a></li>
+    <li><a href="">word55</a></li>
+    <li><a href="">word56</a></li>
+    <li><a href="">word57</a></li>
+    <li><a href="">word58</a></li>
+    <li><a href="">word59</a></li>
+    <li><a href="">word60</a></li>
+  </ul>
+</div>
+<div class="main">
+  <p>Lorem, ipsum.</p>
+  <div class="main-bottom">
+  Lorem, ipsum.
+  <ul class="list2">
+  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione officia facere asperiores voluptate in. Quia.</li>
+  <li>Nihil, quam perspiciatis! Aut, accusantium veritatis? Laboriosam repellat sapiente consequuntur non quidem aperiam fugit quia.</li>
+  <li>Reprehenderit, nisi distinctio, a recusandae suscipit esse sed nesciunt dolores labore quisquam earum, assumenda molestiae!</li>
+  <li>Quo excepturi omnis rem. Quas error perferendis quo reprehenderit nisi voluptates ad ipsum expedita nostrum?</li>
+  <li>Iure debitis hic reiciendis id, praesentium consequuntur corporis magni voluptatem earum placeat beatae, sapiente qui!</li>
+  <li>Quos ducimus, nam est repudiandae voluptatum ex enim sunt delectus recusandae, nemo corrupti in porro!</li>
+  <li>Veniam incidunt fugiat mollitia nemo libero magni nostrum laborum earum, reiciendis voluptate accusantium autem pariatur?</li>
+  <li>Est, neque cumque veniam similique culpa illum itaque mollitia iure, totam pariatur numquam rem quam!</li>
+  <li>Nulla provident harum hic tenetur obcaecati amet numquam, doloribus odio natus corporis omnis repellendus mollitia.</li>
+  <li>Cum fuga illum repudiandae tempore perferendis ab beatae deleniti nisi. Totam magni sequi tempora officiis?</li>
+  <li>Minus dignissimos molestias architecto. Quaerat non assumenda ratione, adipisci in alias ipsam pariatur quidem optio!</li>
+  <li>Maiores possimus saepe eius libero dolor, delectus perferendis et voluptas in mollitia, temporibus tempora earum?</li>
+  <li>Voluptatem expedita commodi optio iste maiores mollitia facere maxime aperiam dolore unde saepe, ut libero.</li>
+  <li>Natus quod provident pariatur accusantium quos veniam! Tempora repellendus illum itaque praesentium, adipisci culpa inventore?</li>
+  <li>Repudiandae amet sit accusamus natus eveniet molestiae, adipisci ducimus! Architecto facilis eum cupiditate nulla omnis?</li>
+  <li>Illo, aliquam. Eum, dignissimos! Perferendis dicta excepturi maxime ex laborum adipisci reprehenderit ducimus illum reiciendis.</li>
+  <li>Totam perferendis corporis ipsam. Id, omnis! Exercitationem qui nulla officiis repudiandae, dolores repellat iste aperiam.</li>
+  <li>Nesciunt voluptas inventore vitae blanditiis consectetur natus nostrum vel, at, maxime alias commodi, enim eaque?</li>
+  <li>Incidunt debitis dolorum amet ipsum, optio alias at iste eius blanditiis magnam eum saepe praesentium.</li>
+  <li>Illo earum porro beatae voluptate, corporis nemo magni, illum ad placeat natus similique nostrum quod!</li>
+  <li>Reprehenderit eveniet ducimus non ipsa labore ab laborum odit tempore, perspiciatis doloremque! Dolor, totam provident?</li>
+  <li>Deserunt, iusto aliquid. Ea fuga ab itaque voluptatibus saepe culpa dolorum delectus esse omnis id?</li>
+  <li>Fugit id aperiam esse sunt eveniet. Illo, debitis. Temporibus quo minus inventore voluptate quos porro?</li>
+  <li>Repudiandae, quidem beatae cumque nihil eveniet, quis, voluptatum sunt facilis at reiciendis hic esse. Nesciunt.</li>
+  <li>Quia, repellendus laborum omnis tempore aspernatur perferendis alias unde, commodi, consequatur iure officia minima nisi?</li>
+  <li>Consequuntur dignissimos mollitia id, qui, repellendus similique expedita nostrum placeat quos, facere nesciunt incidunt autem.</li>
+  <li>Fugit, possimus itaque animi nisi, dolor laboriosam qui, eligendi soluta minima nostrum ullam reprehenderit corporis.</li>
+  <li>Ab fuga adipisci necessitatibus culpa quam! Iste unde id explicabo magnam pariatur. Nihil, voluptatem possimus?</li>
+  <li>Illo incidunt explicabo ducimus commodi, ab dignissimos hic minus repellendus, voluptatem consectetur soluta neque nemo?</li>
+  <li>Dolore est sequi aut tempora quaerat in odit? Incidunt, soluta. Distinctio atque hic at laudantium.</li>
+  <li>Expedita deleniti, temporibus repudiandae fugiat adipisci laboriosam excepturi, optio odio iusto corporis nihil saepe ducimus.</li>
+  <li>Voluptatum, mollitia impedit deserunt tempora soluta quibusdam minus quae quia debitis officia perferendis omnis consequatur.</li>
+  <li>Dolore, perferendis. Animi nesciunt, tempore accusamus, ratione eos odio maiores, amet neque deleniti consectetur repellat?</li>
+  <li>Et praesentium unde, a modi accusamus omnis autem atque repellendus blanditiis nihil mollitia dolor natus?</li>
+  <li>Temporibus accusamus ducimus corrupti, obcaecati eum dolor explicabo omnis debitis, repellendus placeat delectus, ullam sed?</li>
+  <li>Non, eaque. Adipisci possimus omnis eius voluptates, magni, neque iure, a provident at rerum eaque.</li>
+  <li>Reprehenderit voluptatem a atque doloremque officiis exercitationem, commodi odit, numquam impedit blanditiis aliquam eum obcaecati?</li>
+  <li>Suscipit dolore repudiandae consequuntur vero, nobis modi rerum odit nisi, totam iusto reprehenderit odio quidem!</li>
+  <li>Odit esse explicabo soluta voluptas minus dolor, ullam molestiae, nihil, possimus voluptatibus consequatur mollitia ex!</li>
+  <li>Numquam saepe dicta eius asperiores reiciendis quisquam neque, laboriosam tempora, iusto minima, repellendus eligendi fugiat!</li>
+  <li>Fuga, repudiandae! Temporibus necessitatibus veritatis veniam illum ullam doloribus enim fugiat molestiae! Soluta, tempora rerum?</li>
+  <li>Dignissimos non, perspiciatis fugiat omnis nobis amet illo hic soluta eos sit. Ratione, expedita quo!</li>
+  <li>Animi recusandae neque culpa et esse quas totam rem, facilis voluptate consequatur adipisci doloribus cupiditate!</li>
+  <li>Labore ea, facilis dignissimos, necessitatibus dicta nemo laboriosam animi quidem corrupti deleniti enim eaque accusantium?</li>
+  <li>Accusamus blanditiis quia veritatis consequatur atque aliquam, ipsa natus perferendis nisi cum deserunt maiores earum?</li>
+  <li>Veniam, libero! Assumenda possimus explicabo, nemo omnis illum excepturi nesciunt, nisi repellendus, doloribus aspernatur illo.</li>
+  <li>Ea earum incidunt aliquam debitis doloremque tempore nam, perspiciatis inventore totam, temporibus sit at. Culpa.</li>
+  <li>Aliquam animi quia similique libero sint aperiam, officiis incidunt eius quos sequi earum, dolores qui.</li>
+  <li>Inventore voluptate, sequi velit placeat deleniti vel facere dolore quo eius impedit sed et aspernatur!</li>
+  <li>Consequuntur dignissimos consectetur enim expedita. Magni, expedita! A, aliquam! Ipsam quam nulla perferendis a incidunt!</li>
+  <li>Pariatur iusto illum itaque fugiat soluta eligendi, at saepe inventore repellat ipsam quasi adipisci placeat.</li>
+  <li>Excepturi, incidunt! Molestiae placeat explicabo temporibus dolores consectetur, exercitationem assumenda ullam aperiam eos laboriosam atque?</li>
+  <li>Id temporibus voluptatem totam, ad aperiam obcaecati! Libero odit quia consequuntur veritatis. Illo, dicta molestias!</li>
+  <li>Maiores optio sapiente eos nulla sequi. Velit labore ducimus dolorum cupiditate neque facilis sint deleniti!</li>
+  <li>Numquam quasi porro voluptates nam nulla a tenetur, animi aliquam cum ipsam voluptate impedit ex?</li>
+  <li>Nesciunt possimus assumenda placeat voluptatum aperiam aspernatur. Ipsum in provident exercitationem. Accusantium aliquam repellat magnam.</li>
+  <li>Nam voluptate assumenda facere, fuga aut quas deserunt, rem tempora iusto omnis ullam veritatis aliquid.</li>
+  <li>Nam veritatis sint recusandae velit reiciendis ad optio, laboriosam aut dolores fugit et est consequatur?</li>
+  <li>Nemo odio optio quis blanditiis vitae omnis numquam, eveniet a ratione cumque perspiciatis ipsam deleniti!</li>
+  <li>Qui laudantium nisi quisquam odio in commodi nobis quos voluptates explicabo beatae, veniam ipsa esse!</li>
+ </ul>
+ </div>
+</div>
+<div class="last1"><p>last1</p></div>
+<div class="last2"><p>last2</p></div>
+</body>
+</html>
