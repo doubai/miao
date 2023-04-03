@@ -6,324 +6,400 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>css-menu</title>
   <style>
-    html,body{
-      height: 100%;
-      width:100%;
-      margin: 0;
-      background-color: black;
-    }
-  menu{
-    position: fixed;
-    top:0;
-    height:8%;
-    width:100%;
-    border-bottom: 2px solid silver;
-    margin:0;
-    margin-right: 40%;
-    /* 父元素需设置zen-index才能使子元素zen-index生效 */
-    z-index: 1;
-    white-space: nowrap;
+body{
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
 
-    }
-  #min-ps{
-    position: absolute;
-    left:0;
-  }
-  #ps{
-    position: absolute;
-    left: 30%;
-    top: 15%;
+}
+.menu{
+  position: fixed;
+  top: 0;
+  height: 35px;
+  width: 100%;
+  border-bottom: 4px solid silver;
+  white-space: nowrap;
+}
+.menu>li{
+  display: inline-block;
+  width: 4em;
+  position: relative;
 
-    height:300px;
-    width:400px;
+}
+.menu li li:hover{
+  background-color: blue;
+}
+.menu li ul{
+  position: absolute;
+  top: 20px;
+  background-color: white;
+  color: black;
+  padding: 0;
+  width: 6em;
 
-  }
-  menu p{
-    padding-left: 10px;
-    display: inline-block;
-    text-align: center;
 
-  }
+}
+.menu li ul ul {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.menu ul li{
+  display: none;
 
-  menu div{
+}
 
-    color:white;
-    height:100%;
-    width:4em;
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-block;
-    z-index: 1;
 
-  }
-  div:hover ul{
-    display:block;
-  }
-  menu div ul{
-    display: none;
-    position: absolute;
-    top:23px;
-    height: auto;
-    width:4em;
-    text-align: center;
-    list-style: none;
-    background-color:white;
-    color: black;
-    padding:0;
-    z-index:2;
-  }
-  menu div ul li:hover{
-    background-color:blue;
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-  li:hover .picture{
-   display: block;
-
-  }
-  .picture{
-    display: none;
-    position:absolute;
-    left: 100%;
-    width:4em;
-    background-color: white;
-    color: black;
-
-  }
-
-  nav{
-    position: fixed;
-    top:8%;
-    height: 8%;
-    width: 100%;
-    color: white;
-    border-bottom: 2px solid silver;
-   }
-  .shop{
-    position: fixed;
-    top:16%;
-    height: 84%;
-    width:22px;
-    border-right: 2px solid silver;
-
-  }
-  .shop span{
-    display: block;
-    margin-top: 20px;
-    /* hidden之后表情不会超出界限 */
-    overflow: hidden;
-    text-align: center;
-  }
-  main{
-    position: fixed;
-    top:16%;
-
-    left: 22px;
-    height:84%;
-    width:75%;
-    border-right: 2px solid silver;
-
-  }
-  .main-center{
-    position: absolute;
-    top: 5%;
-    right:22px;
-    left: 0;
-    bottom: 22px;
-    overflow: hidden;
-
-  }
-  .main-top{
-    position: absolute;
-    top: 0;
-    height:5%;
-    width:100%;
-    border-bottom: 2px solid silver;
-  }
-  .png{
-    position: absolute;
-    left: 4px;
-    height: 100%;
-    width:auto;
-    color:white;
-
-  }
-  .main-bottom{
-    position: absolute;
-    bottom: 0;
-    height:22px;
-    width:100%;
-    border-top: 2px solid silver;
-  }
-  .main-right{
-    position: absolute;
-    top: 5%;
-
-    right:0;
-    height:95%;
-    width:22px;
-    border-left: 2px solid silver;
-  }
-  .sidebar{
-    position: fixed;
-    top:16%;
-    right:0;
-    height: 84%;
-    width:23%;
-  }
-  .sidebar-top{
-    position:absolute;
-    top: 0;
-    left: 15%;
-    height: 5%;
-    width: 85%;
-    border-bottom: 2px solid silver;
-  }
-  .sidebar-left{
-    position:absolute;
-    left:0;
-    height: 100%;
-    width: 15%;
-    border-right: 2px solid silver;
-  }
-  .sidebar-bottom{
-    position:absolute;
-    bottom: 0;
-    left: 15%;
-    height: 5%;
-    width: 85%;
-    border-top: 2px solid silver;
-  }
+.menu li:hover>ul>li{
+  display: block;
+}
+.menu li[date-shortcut]::after{
+  content: "ctrl+s";
+}
+.menu ul li::before{
+  content: ">";
+  position: absolute;
+  right: 100%;
+}
 
   </style>
 </head>
 <body>
-<menu>
-  <img id="min-ps" src="https://i-1-lanrentuku.52tup.com/2020/11/5/bd8fb5ef-fdaa-4819-b197-5d60898e4b4a.png?imageView2/2/w/1024/" alt="" height="50px" width="50px">
-  <p>
-    <div class="F">
+  <ul class="menu">
+    <li class="F">
       文件(F)
       <ul>
-        <li>新建
-          <span class="picture">picture</span>
+        <li date-shortcut="ctrl+s">新建
+          <ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+         </ul>
         </li>
-        <li>打开</li>
-        <li>存储</li>
-        <li>关闭</li>
+
+        <li>打开
+          <ul>
+          <li>图5</li>
+          <li>图6</li>
+          <li>图7</li>
+          <li>图8</li>
+        </ul>
+      </li>
+
+        <li>存储
+          <ul>
+          <li>图9</li>
+          <li>图10</li>
+          <li>图11</li>
+          <li>图12</li>
+        </ul>
+      </li>
+        <li>关闭<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="E">
+    </li>
+    <li class="E">
       编辑(E)
       <ul>
-        <li>还原</li>
-        <li>搜索</li>
-        <li>清理</li>
-        <li>粘贴</li>
+        <li>还原<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>搜索<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>清理<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>粘贴<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="I">
+    </li>
+    <li class="I">
       图像(I)
       <ul>
-        <li>模式</li>
-        <li>大小</li>
-        <li>旋转</li>
-        <li>分析</li>
+        <li>模式<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>大小<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>旋转<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>分析<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="L">
+    </li>
+    <li class="L">
       图层(L)
       <ul>
-        <li>新建</li>
-        <li>样式</li>
-        <li>显示</li>
-        <li>锁定</li>
+        <li>新建<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>样式<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>显示<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>锁定<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="Y">
+    </li>
+    <li class="Y">
       文字(Y)
       <ul>
-        <li>面板</li>
-        <li>匹配</li>
-        <li>删除</li>
-        <li>语言</li>
+        <li>面板<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>匹配<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>删除<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>语言<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="S">
+    </li>
+    <li class="S">
       选择(S)
       <ul>
-        <li>重新</li>
-        <li>查找</li>
-        <li>编辑</li>
-        <li>隔离</li>
+        <li>重新<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>查找<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>编辑<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>隔离<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="T">
+    </li>
+    <li class="T">
       滤镜(T)
       <ul>
-        <li>扭曲</li>
-        <li>锐化</li>
-        <li>杂色</li>
-        <li>模糊</li>
+        <li>扭曲<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>锐化<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>杂色<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>模糊<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="D">
+    </li>
+    <li class="D">
       3D(D)
       <ul>
-        <li>导出</li>
-        <li>生成</li>
-        <li>打印</li>
-        <li>绘画</li>
+        <li>导出<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>生成<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>打印<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>绘画<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="V">
+    </li>
+    <li class="V">
       视图(V)
       <ul>
-        <li>放大</li>
-        <li>缩小</li>
-        <li>翻转</li>
-        <li>对齐</li>
+        <li>放大<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>缩小<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>翻转<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>对齐<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="W">
+    </li>
+    <li class="W">
       窗口(W)
       <ul>
-        <li>排列</li>
-        <li>扩展</li>
-        <li>调整</li>
-        <li>路径</li>
+        <li>排列<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>扩展<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>调整<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>路径<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
       </ul>
-    </div>
-    <div class="H">
+    </li>
+    <li class="H">
       帮助(H)
       <ul>
-        <li>关于</li>
-        <li>信息</li>
-        <li>登录</li>
-        <li>更新</li>
+        <li>关于<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>信息<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+        <li>登录<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+
+        <li>更新<ul>
+          <li>图1</li>
+          <li>图2</li>
+          <li>图3</li>
+          <li>图4</li>
+        </ul></li>
+
       </ul>
-    </div>
-  </p>
-</menu>
-<nav>
+    </li>
+  </ul>
 
-</nav>
-<div class="shop">
-  <span>&#128512;</span><span>&#128513;</span><span>&#128514;</span><span>&#128515;</span><span>&#128516;</span><span>&#128517;</span><span>&#128518;</span><span>&#128519;</span><span>&#128520;</span><span>&#128521;</span><span>&#128522;</span>
-</div>
-<main>
 
-  <div class="main-center">
-    <img src="https://img1.baidu.com/it/u=2948813774,2922735923&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" alt="" id="ps">
-  </div>
-  <div class="main-top">
-    <span class="png">xxx.png@source &#128523;</span>
-  </div>
-  <div class="main-right"></div>
-  <div class="main-bottom"></div>
-</main>
-<div class="sidebar">
-<div class="sidebar-top"></div>
-<div class="sidebar-left"></div>
-<div class="sidebar-bottom"></div>
-</div>
 </body>
 </html>
+
