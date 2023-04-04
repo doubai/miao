@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>twitter-heart</title>
+  <style>
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+   .box{
+    height: 100px;
+    width: 100px;
+    border: 3px solid;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 50 auto ;
+   }
+   input{
+    display: none;
+   }
+   .box img{
+    transition: none;
+   }
+   #heart:checked + .box img{
+    margin-left: -2800px;
+    transition:1s steps(28);
+   }
+
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="heart" >
+  <label class="box" for="heart">
+    <img src="heart.png" alt="">
+  </label>
+</body>
+</html>
