@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <style >
+    html,body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+   header{
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    color: gray;
+    position: relative;
+    white-space: nowrap;
+    line-height: 40px;
+
+   }
+   /* 取消链接下划线 */
+   a{
+    text-decoration: none;
+   }
+   a::after{
+    content: '|';
+   }
+   a:link{
+    color: gray;
+   }
+   a:visited{
+
+    color: gray;
+   }
+   /* header::before{
+    content: '';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+   } */
+  .status{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    height: auto;
+    width: auto;
+
+
+  }
+   a:link{
+    color: gray;
+   }
+   .nav .product{
+    display: flex;
+    list-style: none;
+
+   }
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://www.mi.com/" target="_blank">小米官网</a>
+    <a href="https://www.mi.com/shop"> 小米商城</a>
+    <a href="https://home.miui.com/"> MIUI</a>
+    <a href="https://iot.mi.com/"> IoT</a>
+    <a href="https://i.mi.com/"> 云服务</a>
+    <a href="https://airstar.com/home"> 天星数科 </a>
+    <a href="https://www.xiaomiyoupin.com/">有品</a>
+    <a href="https://xiaoai.mi.com/">小爱开放平台</a>
+    <a href="https://qiye.mi.com/">企业团购</a>
+    <a href="https://www.mi.com/shop/aptitude/list?id=88">资质证照</a>
+    <a href="https://www.mi.com/shop/aptitude/list" target="_blank">协议规则</a>
+    <a href="https://www.mi.com/appdownload">下载app</a>
+    <span>slecct location</span>
+    <header class="status">
+    <a href="">登录</a>
+    <a href="">注册</a>
+    <a href="">消息通知</a>
+    <span>购物车(0)</span>
+    </header>
+  </header>
+<img src="https://www.mi.com/" alt="">
+<div class="nav">
+  <img src="mi.png" alt="" height="60px" width="60px">
+  <ul class="product">
+    <li>xiaomi手机</li>
+    <li>redmi手机</li>
+    <li>电视</li>
+    <li>笔记本</li>
+    <li>平板</li>
+    <li>家电</li>
+    <li>路由器</li>
+    <li>服务中心</li>
+    <li>社区</li>
+  </ul>
+  <input type="text">
+  <button><img src="https://img.ixintu.com/download/jpg/202008/fe1aa2007a18f673382a34fdffd6274c_493_589.jpg!con" alt="" height="20px" width="20px"></button>
+
+</div>
+
+</body>
+</html>
