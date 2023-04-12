@@ -1,106 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>index</title>
-  <style >
-    html,body{
+  <style>
+    /* *{background-color: rga(0,0,0,0.08);
+box-shadow: inset 0 0 1px red;} */
+
+    html,
+    body {
       width: 100%;
       height: 100%;
       margin: 0;
+      overflow: auto;
+      min-width: 1226px;
     }
-   header{
-    height: 40px;
-    width: 100%;
-    background-color: black;
-    color: gray;
-    position: relative;
-    white-space: nowrap;
-    line-height: 40px;
+    .all{
+      margin: auto;
+      width: 1226px;
+    }
+   /* 导航栏 */
+    header {
+      display: flex;
+      justify-content: space-between;
+      
+      height: 40px;
+      width:100%;
+      background-color: black;
+      color: gray;
+      overflow: hidden;
 
-   }
-   /* 取消链接下划线 */
-   a{
-    text-decoration: none;
-   }
-   a::after{
-    content: '|';
-   }
-   a:link{
-    color: gray;
-   }
-   a:visited{
+      line-height: 40px;
+      font-size: small;
 
-    color: gray;
-   }
-   /* header::before{
+    }
+    /* 小竖线 */
+    header .sep{
+      color: #424242;
+    }
+
+
+    /* 取消链接下划线 */
+    a {
+      text-decoration: none;
+    }
+
+
+
+    a:link {
+      color: gray;
+    }
+
+    a:visited {
+
+      color: gray;
+    }
+
+    /* header::before{
     content: '';
     height: 100%;
     display: inline-block;
     vertical-align: middle;
    } */
-  .status{
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    height: auto;
-    width: auto;
+    .status {
+      display: flex;
+      justify-content: flex-end;
+     overflow: hidden;
+
+    }
+
+    a:link {
+      color: gray;
+    }
+    /* 产品搜索栏 */
+
+    div.nav {
+      position: relative;
+      height:40px;
+      width: 100%;
+      vertical-align: middle;
+    }
+    .product{
+
+      position: absolute;
+      top: 0;
+      left: 40px;
+      white-space: nowrap;
+      word-spacing: 20px;
 
 
-  }
-   a:link{
-    color: gray;
+    }
+    .nav .side-nav{
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: 40px;
+
+
+
+    }
+    .side-nav input{
+      height: 40px;
+      width: 200px;
+    }
+    button{
+      height: 46px;
+      width: 46px;
+    }
+    .product li {
+      display: inline-block;
+
+    }
+   /* 产品导航栏 */
+   .sidebar{
+    background-color: gray;
+    width: 180px;
+    height: 400px;
+
    }
-   .nav .product{
-    display: flex;
-    list-style: none;
-
+   .sidebar ul{
+    padding: 0;
    }
+   .product-side li{
+     list-style-type: none;
+    margin: 20px;
+   }
+
 
   </style>
 </head>
+
 <body>
+  <div class="all">
   <header>
+    <div class="a">
     <a href="https://www.mi.com/" target="_blank">小米官网</a>
+    <span class="sep">|</span>
     <a href="https://www.mi.com/shop"> 小米商城</a>
+    <span class="sep">|</span>
     <a href="https://home.miui.com/"> MIUI</a>
+    <span class="sep">|</span>
     <a href="https://iot.mi.com/"> IoT</a>
+    <span class="sep">|</span>
     <a href="https://i.mi.com/"> 云服务</a>
+    <span class="sep">|</span>
     <a href="https://airstar.com/home"> 天星数科 </a>
+    <span class="sep">|</span>
     <a href="https://www.xiaomiyoupin.com/">有品</a>
+    <span class="sep">|</span>
     <a href="https://xiaoai.mi.com/">小爱开放平台</a>
+    <span class="sep">|</span>
     <a href="https://qiye.mi.com/">企业团购</a>
+    <span class="sep">|</span>
     <a href="https://www.mi.com/shop/aptitude/list?id=88">资质证照</a>
+    <span class="sep">|</span>
     <a href="https://www.mi.com/shop/aptitude/list" target="_blank">协议规则</a>
+    <span class="sep">|</span>
     <a href="https://www.mi.com/appdownload">下载app</a>
+    <span class="sep">|</span>
     <span>slecct location</span>
-    <header class="status">
-    <a href="">登录</a>
-    <a href="">注册</a>
-    <a href="">消息通知</a>
-    <span>购物车(0)</span>
-    </header>
+  </div>
+    <div class="status">
+      <a href="">登录</a>
+      <span class="sep">|</span>
+      <a href="">注册</a>
+      <span class="sep">|</span>
+      <a href="">消息通知</a>
+      <span class="sep">|</span>
+      <span>购物车(0)</span>
+    </div>
   </header>
-<img src="https://www.mi.com/" alt="">
-<div class="nav">
-  <img src="mi.png" alt="" height="60px" width="60px">
-  <ul class="product">
-    <li>xiaomi手机</li>
-    <li>redmi手机</li>
-    <li>电视</li>
-    <li>笔记本</li>
-    <li>平板</li>
-    <li>家电</li>
-    <li>路由器</li>
-    <li>服务中心</li>
-    <li>社区</li>
-  </ul>
-  <input type="text">
-  <button><img src="https://img.ixintu.com/download/jpg/202008/fe1aa2007a18f673382a34fdffd6274c_493_589.jpg!con" alt="" height="20px" width="20px"></button>
-
-</div>
-
+  <img src="https://www.mi.com/" alt="">
+  <div class="nav">
+    <a href="https://www.mi.com/" target="_blank"><img src="mi.png" alt="" height="40px" width="40px"></a>
+      <ul class="product">
+        <li class="empty"> </li>
+        <li>xiaomi手机</li>
+        <li>redmi手机</li>
+        <li>电视</li>
+        <li>笔记本</li>
+        <li>平板</li>
+        <li>家电</li>
+        <li>路由器</li>
+        <li>服务中心</li>
+        <li>社区</li>
+      </ul>
+    <div class="side-nav">
+      <input type="text" placeholder="电视"><button><img src="https://img.ixintu.com/download/jpg/202008/fe1aa2007a18f673382a34fdffd6274c_493_589.jpg!con" alt="" height="12px" width="20px"></button>
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul class="product-side">
+      <li>手机</li>
+      <li>电视</li>
+      <li>家电</li>
+      <li>笔记本 平板</li>
+      <li>出行 穿戴</li>
+      <li>耳机 音箱</li>
+      <li>健康 儿童</li>
+      <li>生活 箱包</li>
+      <li>智能 路由器</li>
+      <li>电源 配件</li>
+    </ul>
+  </div>
+  <div class="image-around">
+    <input type="radio">
+    <input type="radio">
+    <input type="radio">
+    <input type="radio">
+  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920" alt="">
+    <img
+      src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6494adc68900269b551de5ba96bd10a9.jpg?thumb=1&w=1839&h=690&f=webp&q=90"
+      alt="">
+    <img
+      src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7c21d01bbe93eafc7d07d3796a3c59c.jpg?thumb=1&w=1839&h=690&f=webp&q=90"
+      alt="">
+    <img
+      src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/08a9d7eec7b055bac247b5068f817b1d.jpg?thumb=1&w=1839&h=690&f=webp&q=90"
+      alt="">
+    </div>
+  </div>
 </body>
+
 </html>
