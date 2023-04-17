@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>abs-center</title>
+  <style>
+    div{
+      height: 200px;
+      width: 200px;
+      background-color: gold;
+      margin-top: 20px;
+    }
+    /* s1 */
+    .s1{
+      position: relative;
+    }
+    .s1 section{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      background-color: red;
+    }
+    /* s2 */
+    .s2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .s2 section{
+      background-color: red;
+      width: 80px;
+      height: 80px;
+    }
+    /* s3 */
+    .s3{
+      position: relative;
+    }
+    .s3 section{
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      transform: translate(-40px, -40px);
+      word-break: break-all;
+      width: 80px;
+      height: 80px;
+      background-color: red;
+    }
+    /* s4 */
+    .s4{
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .s4 section{
+      background-color: red;
+      width: 80px;
+      height: 80px;
+    }
+    /* s5 */
+    .s5{
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .s5 section{
+      background-color: red;
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      word-break: break-all;
+    }
+    /* s6 */
+    .s6{
+      text-align: center;
+      font-size: 0;
+      line-height: 200px;
+    }
+    .s6 section{
+      display: inline-block;
+      height: 80px;
+      width: 80px;
+      background-color: red;
+      vertical-align: middle;
+      font-size: 16px;
+      line-height: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="s1">
+    <section>Lorem, ipsum.</section>
+  </div>
+  <div class="s2">
+    <section>Pariatur, quas!</section>
+  </div>
+  <div class="s3">
+    <section>Doloremque, dignissimos?</section>
+  </div>
+  <div class="s4">
+    <section>Quidem, odit!</section>
+  </div>
+  <div class="s5">
+    <section>Voluptates, illo!</section>
+  </div>
+  <div class="s6">
+    <section>Qui, doloribus?</section>
+  </div>
+
+</body>
+</html>
