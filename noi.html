@@ -1,0 +1,124 @@
+<script id="ch0103/01" type="">
+  var A= + prompt ('A') , B= + prompt ('B')
+  C=A + B
+  console.log(C)
+</script>
+
+<script id="ch0103/02" type="">
+var a = + prompt('a'), b = + prompt('b'), c= + prompt('c')
+var d = (a+b)*c
+console.log(d)
+</script>
+
+<script id="ch0103/03" type="">
+var a = + prompt('a'), b = + prompt('b'), c= + prompt('c')
+var d = (a+b)/c
+console.log(d)
+</script>
+
+<script id="ch0103/04" type="">
+var a = + prompt('a'), b = + prompt('b')
+//var c = parseInt(a/b)
+var c=Math.trunc(a / b)
+var d = a % b
+console.log(c,d)
+</script>
+
+<script id="ch0103/05" type="">
+var a = + prompt('a'), b = + prompt('b')
+var c = a/b
+console.log(c.toFixed(9))
+</script>
+
+<script id="ch0103/06" type="">
+var a = + prompt('a'), b = + prompt('b')
+var c = b/a
+console.log(c.toFixed(5)*100 + '%')
+</script>
+
+<script id="ch0103/07" type="">
+var x= + prompt('x'), a = + prompt('a'), b = + prompt('b'), c= +prompt('c'), d= + prompt('d')
+var x = a * x ** 3 + b * x ** 2 + c * x + d
+console.log(x.toFixed(7))
+</script>
+
+<script id="ch0103/08" type="">
+var f = prompt('f')
+var c =5 * (f-32) / 9
+console.log(c.toFixed(5))
+</script>
+
+<script id="ch0103/09" type="">
+var r = prompt('r')
+var d = 2*r
+var c = 2*3.14159*r
+var s = 3.14159*r*r
+console.log(d.toFixed(4), c.toFixed(4), s.toFixed(4))
+</script>
+
+<script id="ch0103/10" type="">
+var r1 = prompt('r1'), r2 = prompt('r2')
+var R = 1/(1/r1 + 1/r2)
+console.log(R.toFixed(2))
+</script>
+
+<script id="ch0103/11" type="">
+var a = prompt(a), b = prompt(b)
+console.log(a%b)
+</script>
+
+<script id="ch0103/12" type="">
+var r = prompt(r)
+var V=4 / 3 * 3.14 * r ** 3
+console.log(V.toFixed(2))
+</script>
+
+<script id="ch0103/13" type="">
+var a = prompt(a)
+console.log(a%10, (a-a%10)/10%10, (a-a%100)/100 % 10)
+</script>
+
+<script id="ch0103/14" type="">
+var h = prompt(), r = prompt()
+var V=20 / (3.14159 * r ** 2 * h / 1000)
+console.log(Math.ceil(V) )
+</script>
+
+<script id="ch0103/15" type="">
+var n = prompt(), x = prompt(), y= prompt()
+var z=n-y/x
+console.log(Math.floor(z) )
+</script>
+
+<script id="ch0103/16" type="">
+var x1=prompt(), y1=prompt(), x2=prompt(), y2=prompt()
+var z=(x1-x2) ** 2 + (y1-y2) ** 2
+console.log(Math.sqrt(z) .toFixed(3))
+</script>
+
+<script id="ch0103/17" type="">
+var x1=prompt(x1, 0), y1=prompt(y1, 0), x2=prompt(x2, 4), y2=prompt(y2,0),x3=prompt(x3, 0), y3=prompt(y3, 3)
+var a=(x1-x2) ** 2 + (y1-y2) ** 2
+var h=(y1-y3)
+var a=Math.sqrt(a), h=Math.abs(h)
+var s=0.5 * a * h
+console.log(s.toFixed(2))
+</script>
+
+<script id="ch0103/18" type="">
+var a1=+prompt(a1, 1) , a2 = +prompt(a2,4), n=+prompt(n,100)
+var an=a1 + (n-1) * (a2 - a1)
+console.log(an)
+</script>
+
+<script id="ch0103/19" type="">
+var a=+prompt(a, 3) , b = +prompt(b,4)
+var c=a*b
+console.log(c)
+</script>
+
+<script id="ch0103/20" type="">
+var a=+prompt(a, 2), n=+prompt(n ,3)
+var b = a ** n
+console.log(b)
+</script>
