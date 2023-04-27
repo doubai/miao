@@ -14,7 +14,7 @@ console.log(d)
 <script id="ch0103/03" type="perfect">
 var a = + prompt('a'), b = + prompt('b'), c= + prompt('c')
 var d = (a+b)/c
-console.log(d)
+console.log(Math.trunc(d))
 </script>
 
 <script id="ch0103/04" type="perfect">
@@ -65,7 +65,7 @@ console.log(R.toFixed(2))
 
 <script id="ch0103/11" type="perfect">
 var a = prompt(a), b = prompt(b)
-console.log(a%b)
+console.log((a%b).toFixed(4))
 </script>
 
 <script id="ch0103/12" type="perfect">
@@ -119,8 +119,8 @@ console.log(c)
 </script>
 
 <script id="ch0103/20" type="perfect">
-var a=+prompt(a, 2), n=+prompt(n ,3)
-var b = a ** n
+var n=+prompt(n ,3)
+var b = 2 ** n
 console.log(b)
 </script>
 
@@ -155,9 +155,9 @@ if (n % 2 == 1){
 var n = prompt()
 n = n.charCodeAt(0)
 if (n % 2 == 1){
-  console.log('yes')
+  console.log('YES')
 } else {
-  console.log('no')
+  console.log('NO')
 }
 </script>
 
@@ -195,9 +195,9 @@ if (x > 10 && y < 20){
 <script id="ch0104/08" type="perfect">
 var n = + prompt()
 if (n % 3 == 0 && n % 5 == 0){
-  console.log('yes')
+  console.log('YES')
 } else {
-  console.log('no')
+  console.log('NO')
 }
 </script>
 
@@ -247,27 +247,27 @@ if ((x < 60 && y > 60) || (x > 60 && y < 60)){
 <script id="ch0104/11" type="perfect">
 var n = + prompt()
 if (n !==1 && n !== 3 && n !== 5){
-  console.log('yes')
+  console.log('YES')
 } else {
-  console.log('no')
+  console.log('NO')
 }
 </script>
 
 <script id="ch0104/12" type="perfect">
 var n = + prompt()
 if (n>50){
-  console.log('bike')
+  console.log('Bike')
 } else if (n == 50) {
-  console.log('all')
+  console.log('All')
 } else {
-  console.log('walk')
+  console.log('Walk')
 }
 </script>
 
 <script id="ch0104/13" type="perfect">
 var n = + prompt()
 if (n >= 0 && n < 5){
-  console.log((n + 2.5).toFixed(3))
+  console.log((-n + 2.5).toFixed(3))
 } else if (n >= 5 && n < 10) {
   console.log((2 - 1.5 * (n-3) * (n-3)).toFixed(3))
 } else {
@@ -276,34 +276,36 @@ if (n >= 0 && n < 5){
 </script>
 
 <script id="ch0104/14" type="perfect">
-var a = prompt('a')
+var a = + prompt('a')
 var b = prompt('b')
-if (a <= 1000){
-  if (b == 'x' ){
-    console.log(8)
-  } else {
-    consloe.log(13)
-  }
+if (a <= 1000 ){
+  price = 8
 } else {
-  if (b == 'x') {
-    console.log(8 + Math.ceil((a - 1000)/500) * 4)
-  } else {
-    console.log(8 + Math.ceil((a - 1000)/500) * 4 + 5)
-  }
+  price = 13
 }
+if (b == 'x') {
+  price = price + Math.ceil((a - 1000)/500) * 4
+}
+if (b == 'y') {
+  price = price + Math.ceil((a - 1000)/500) * 4 + 5
+}
+console.log(price)
+
 </script>
 
 <script id="ch0104/15" type="perfect">
-var a = + prompt()
-var b = + prompt()
-var c = + prompt()
-if (a>b && a>c){
-  console.log(a)
-} else if (b>a && b>c) {
-  console.log(b)
-} else {
-  console.log(c)
-}
+  var a = + prompt ()
+  var b = + prompt ()
+  var c = + prompt ()
+  var max = a
+  if (b>a) {
+    max = b
+  }
+  if (c>a) {
+    max = c
+  }
+  console.log(max)
+
 </script>
 
 <script id="ch0104/16" type="perfect">
@@ -319,10 +321,10 @@ if (((a + b) > c && c > a && c  > b) || ((a + c) > a && a > b && a > c) || ((a +
 
 <script id="ch0104/17" type="perfect">
 var a = + prompt()
-if (a % 400 == 0 || a % 4 == 0 && a % 100 !== 0){
-  console.log('y')
+if (( a % 400 == 0 && a % 3200 !==0 ) || a % 4 == 0 && a % 100 !== 0){
+  console.log('Y')
 }  else {
-  console.log('n')
+  console.log('N')
 }
 </script>
 
@@ -340,18 +342,21 @@ if (x <=1 && x >= -1 && y <= 1 && y >= -1){
 var a = + prompt()
 var b = + prompt()
 var c = prompt()
-if (b == 0){
-  console.log('Divided by zero!')
-} else if (c !== '+' && c !== '-' && c !== '*' && c !== '/') {
-  console.log('Invalid operator!')
-} else if (c == '+') {
+if (c == '+') {
   console.log(Math.trunc(a+b))
 } else if (c == '-') {
   console.log(Math.trunc(a-b))
 } else if (c == '*') {
   console.log(Math.trunc(a*b))
+} else if (c == '/') {
+  if (b == 0){
+    console.log('Divided by zero!')
+  } else {
+    console.log(Math.trunc(a/b))
+  }
+
 } else {
-  console.log(Math.trunc(a/b))
+  console.log('Invalid operator!')
 }
 </script>
 
@@ -366,18 +371,82 @@ if (b*b == 4*a*c){
 } else if (b*b > 4*a*c) {
   var X1 = (-b + Math.sqrt(b*b-4*a*c))/(2*a)
   var X2 = (-b - Math.sqrt(b*b-4*a*c))/(2*a)
-  console.log('x1'+'='+ X1.toFixed(5),'x2'+'='+ X2.toFixed(5))
+  console.log('x1'+'='+ X1.toFixed(5) + ';' + x2'+'='+ X2.toFixed(5))
 } else {
   var X1 = (-b / (2 * a)).toFixed(5) + "+" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
   var X2 = (-b / (2 * a)).toFixed(5) + "-" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
-  console.log('x1'+'='+ X1,'x2'+'='+ X2)
+  console.log('x1'+'='+ X1 + ';' + 'x2'+'='+ X2)
 }
 </script>
 
 <script id="ch0104/21" type="perfect">
-  var n = + prompt()
+var n = + prompt()
+var x = + prompt()
+var y = + prompt()
+var s = n - y / x
+console.log(Math.floor(s))
+</script>
+
+<script id="ch0105/01" type="perfect">
+var n = + prompt()
+var sum = 0
+var counter = 0
+while (counter < n) {
+  var age = + prompt('输入你的年龄')
+  sum = sum + age
+  counter = counter + 1
+}
+console.log((sum / n).toFixed(2))
+</script>
+
+<script id="ch0105/02" type="perfect">
+var sum = 0
+var n = 1
+while (n <= 12) {
+  var surplus = + prompt(n + '月结余')
+  sum = sum + surplus
+  n = n + 1
+}
+console.log('$' + (sum / 12).toFixed(2))
+</script>
+
+<script id="ch0105/03" type="perfect">
+var n = + prompt()
+var sum = 0
+var counter = 0
+while (counter < n) {
   var x = + prompt()
-  var y = + prompt()
-  var s = n - y / x
-  console.log(Math.floor(s))
-  </script>
+  sum = sum + x
+  counter = counter + 1
+}
+console.log((sum / n).toFixed(4))
+</script>
+
+<script id="ch0105/04" type="perfect">
+var n = + prompt()
+var sum = 0
+var counter = 0
+while (counter < n) {
+  var x = + prompt()
+  sum = sum + x
+  counter = counter + 1
+}
+console.log(sum, Number((sum / n).toFixed(5)))
+</script>
+
+<script id="ch0105/05" type="perfect">
+var n = + prompt()
+var counter = 1
+var max = 0
+while (counter <= n) {
+  var score = + prompt('分数' + counter)
+  if (score > max) {
+     max = score
+  } else {
+  }
+  counter = counter + 1
+}
+console.log(max)
+</script>
+
+

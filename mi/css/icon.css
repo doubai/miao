@@ -46,7 +46,7 @@
   content: "\221a";
 }
 
-.icon-:before {
+.icon-geren:before {
   content: "\e600";
 }
 
@@ -118,7 +118,7 @@
   content: "\e611";
 }
 
-.icon-:before {
+.icon-top:before {
   content: "\e612";
 }
 
@@ -138,7 +138,7 @@
   content: "\e616";
 }
 
-.icon-:before {
+.icon-wenhao:before {
   content: "\e617";
 }
 
@@ -234,7 +234,7 @@
   content: "\e62e";
 }
 
-.icon-top:before {
+.icon-:before {
   content: "\e62f";
 }
 
