@@ -281,15 +281,15 @@ var b = prompt('b')
 if (a <= 1000 ){
   price = 8
 } else {
-  price = 13
+  price = 8 + Math.ceil((a - 1000)/500) * 4
 }
-if (b == 'x') {
-  price = price + Math.ceil((a - 1000)/500) * 4
+if (b == 'n') {
+  console.log(price)
 }
 if (b == 'y') {
-  price = price + Math.ceil((a - 1000)/500) * 4 + 5
+  console.log(price + 5)
 }
-console.log(price)
+
 
 </script>
 
@@ -431,7 +431,8 @@ while (counter < n) {
   sum = sum + x
   counter = counter + 1
 }
-console.log(sum, Number((sum / n).toFixed(5)))
+var average = sum / n
+console.log(sum, average.toFixed(5))
 </script>
 
 <script id="ch0105/05" type="perfect">
@@ -449,4 +450,11 @@ while (counter <= n) {
 console.log(max)
 </script>
 
+<script id="ch0105/06" type="p">
+var n = + prompt('设定个数')
+var counter = 1
+var max = 0
+var min = -1
 
+console.log(diffrence)
+</script>
