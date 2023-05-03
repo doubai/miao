@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="500" height="400"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.trunc(x)
+    y = Math.trunc(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * 你的任务：通过调用dot函数，实现：
+   * 需要注意，dot函数不能接收浮点数，如果参数为浮点数，会被转换为整数后绘制
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条水平实线，粗细为一个像素
+      * 画一条垂直实线，粗细为一个像素
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴的夹角呈30度）
+      * 画一条60度的斜线（与x轴的夹角呈60度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个空心的圆，圆心在画布中心：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小位置都合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+      * 如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变换后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+  //点
+  dot(42,42, 'gold')
+
+
+  //横线
+ for (x = 10; x <= 90; x++) {
+  dot (x , 10 , 'gold')
+ }
+
+ //竖线
+ for (y = 20; y <= 90; y++) {
+  dot (10, y, 'gold' )
+ }
+
+ //虚线
+ for (x = 15;   x <= 90; x++) {
+  if (x % 2 == 1) {
+    dot(x, 20, 'red')
+  }
+ }
+
+ //两实两虚
+ for (x = 15; x <= 90; x++) {
+  if (x % 4 == 0) {
+    dot(x, 30, 'red')
+  }
+  if (x % 4 == 0) {
+    dot(x + 1, 30, 'blue')
+  }
+ }
+
+ //三实两虚
+ for (x = 15; x <= 90; x++) {
+  if (x % 5 == 0) {
+    dot(x, 40, 'red')
+  }
+  if (x % 5 == 0) {
+    dot(x + 1, 40, 'yellow')
+  }
+  if (x % 5 == 0) {
+    dot(x + 2, 40, 'blue')
+  }
+ }
+
+ //45度斜线
+ for (var x = 0; x <= 650 ; x++) {
+   var y = x
+  dot(x, y, 'orange')
+ }
+
+ //30度斜线
+ for (var x = 0; x <= 650 ; x++) {
+   var y = 30 / 45 * x
+  dot(x, y, 'orange')
+ }
+
+ //60度斜线
+ for (var y = 0; y <= 400 ; y++) {
+   var x = 30 / 45 * y
+  dot(x, y, 'orange')
+ }
+
+ //对角线
+ for (var x = 0; x <= 600 ; x++) {
+   var y = 400 / 500 * x
+  dot(x, y, 'orange')
+ }
+
+ //空心矩形
+ for (var x = 350; x <= 490; x++) {
+  dot(x, 150, 'silver')
+ }
+ for (var x = 350; x <= 490; x++) {
+  dot(x, 250, 'silver')
+ }
+ for (var y = 150; y <= 250; y++) {
+  dot(350, y, 'silver')
+ }
+ for (var y = 150; y <= 250; y++) {
+  dot(490, y, 'silver')
+ }
+
+ //实心矩形
+ for (var x = 350; x <= 490; x++) {
+  for (var y = 300; y <= 380; y++) {
+    dot(x, y, 'lightgreen')
+  }
+ }
+
+ //第十三题 空心圆
+ for (var x = -50; x <= 50; x++) {
+  var y = Math.sqrt(50 * 50 - x * x)
+  dot(x + 250, y + 200 , 'lightblue')
+  dot(x + 250, -y + 200, 'lightblue')
+  }
+  for (var x = -200; x <= 200; x++) {
+  var y = Math.sqrt(200 * 200 - x * x)
+  dot(x + 250, y + 200 , 'lightblue')
+  dot(x + 250, -y + 200, 'lightblue')
+  }
+
+  //第十四题  实心圆
+  for (var x2 = -100; x2 <= 100; x2++) {
+  for (var y2 = -100; y2 <= 100; y2++) {
+    if (x2 * x2 + y2 * y2 < 10000) {
+    dot(x2 + 250, y2 + 200 , 'lightblue')
+
+    }
+
+  }
+  }
+
+
+
+
+  //sin曲线
+  for (var x = 0; x < 500 ; x++) {
+    y = Math.sin(x / 20) * 20
+    dot(x, y + 100, 'red')
+  }
+
+  //rgb色彩空间
+  for (var x = 0; x < 256; x++) {
+    for (var y = 0; y < 256; y++) {
+      dot(x  + 20, y + 100, 'rgb(' + x + ',' + y + ',255' )
+    }
+  }
+
+  // for (var x = 0; x < 256; x++) {
+  //   for (var y = 0; y < 256; y++) {
+  //     var x1 = 0.6 * x + 0.8 * y
+  //     var y1 = 0.6 * x - 0.8 * y
+  //     dot(x  + 300, y + 100, 'rgb(' + x + ',' + y + ',255' )
+  //   }
+  // }
+</script>
+</html>
