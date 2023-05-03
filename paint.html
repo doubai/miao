@@ -12,7 +12,7 @@
   </style>
 </head>
 <body>
-  <canvas width="500" height="400"></canvas>
+  <canvas width="1000" height="1000"></canvas>
 </body>
 <script>
   var canvas = document.querySelector('canvas')
@@ -165,10 +165,10 @@
   }
 
   //第十四题  实心圆
-  for (var x2 = -100; x2 <= 100; x2++) {
-  for (var y2 = -100; y2 <= 100; y2++) {
+  for (var x2 = -100; x2 <= 256; x2++) {
+  for (var y2 = -100; y2 <= 256; y2++) {
     if (x2 * x2 + y2 * y2 < 10000) {
-    dot(x2 + 250, y2 + 200 , 'lightblue')
+    dot(x2 + 250, y2 + 200 , 'rgb(' + x + ',' + y + ',255)')
 
     }
 
@@ -187,16 +187,16 @@
   //rgb色彩空间
   for (var x = 0; x < 256; x++) {
     for (var y = 0; y < 256; y++) {
-      dot(x  + 20, y + 100, 'rgb(' + x + ',' + y + ',255' )
+      dot(x  + 600, y + 100, 'rgb(' + x + ',' + y + ',255)' )
     }
   }
 
-  // for (var x = 0; x < 256; x++) {
-  //   for (var y = 0; y < 256; y++) {
-  //     var x1 = 0.6 * x + 0.8 * y
-  //     var y1 = 0.6 * x - 0.8 * y
-  //     dot(x  + 300, y + 100, 'rgb(' + x + ',' + y + ',255' )
-  //   }
-  // }
+  for (var x = 0; x < 256; x++) {
+    for (var y = 0; y < 256; y++) {
+      var x1 = 0.6 * x + 0.8 * y
+      var y1 = 0.6 * x - 0.8 * y
+      dot(x1  + 100, y1 + 700, 'rgb(' + x1 + ',' + y1 + ',255' + ')')
+    }
+  }
 </script>
 </html>
