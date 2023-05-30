@@ -82,11 +82,131 @@ class Complex {
   div(Complex) {
     var helper = new Complex(Complex.real, -Complex.imaginary)
     var up = this.mul(helper)
-    var down = Complex.mul(helper) // down的虚部应该是0
+    var down = Complex.mul(helper)
     var real = up.real / down.real
     var imaginary = up.imaginary / down.real
     return new Complex(real, imaginary)
   }
 }
+
+class Stack {
+  constructor (head) {
+  this.head = null
+  this.nodeCount = 0
+  }
+  push (val) {
+    var node = {
+      val, next: null
+    }
+
+    if (!this.head) {
+    this.head = node
+    } else {
+      node.next = this.head
+      this.node = head
+    }
+    this.nodeCount++
+  }
+  pop() {
+    if (!this.head) return
+    else {
+      const res = this.head.val
+      this.head = this.head.next
+      this.nodeCount--
+      return res
+    }
+  }
+  get size() {
+    return this.nodeCount
+  }
+}
+
+class Queue {
+  constructor (head, next) {
+  this.head = null
+  this.tail = null
+  this.count = 0
+  }
+  add (val) {
+    var node = {
+      val, next: null
+    }
+    if (!this.head) {
+      this.head = this.tail = node
+    } else {
+      this.tail.next = node
+      this.tail = node
+    }
+    this.count++
+  }
+  pop() {
+    if (!this.head) return
+    if (this.head == this.tail) {
+      let res = this.head.val
+      this.head = this.tail = null
+      return res
+    }
+    let res = this.head.val
+    this.head = this.head.next
+    return res
+    this.count++
+  }
+  get size() {
+    return this.count
+  }
+}
+
+class LinkedList {
+  constructor (head, tail) {
+    this.head = null
+    this.tail = null
+  }
+  append(val) {
+    var node = {
+      val, next: null
+    }
+    if (!head) {
+      this.head = this.tail = node
+      return
+    } else {
+      this.tail.next = node
+      this.tail = node
+      return
+    }
+  }
+  prepend(val) {
+    var node = {
+      val, next: null
+    }
+    if (!this.head) {
+      this.head = this.tail = node
+      return
+    } else {
+      node.next = this.head
+        this.head = node
+        return
+    }
+  }
+  at(index) {
+    var top = this.head
+    var count = 0
+    while (count < index) {
+      count++
+      top = top.next
+    }
+    return top.next.val
+  }
+  get size() {
+    var top = this.head
+    var count = 0
+    while (top) {
+      count++
+      top = top.next
+    }
+    return count
+  }
+}
+
+
 
 
