@@ -25,12 +25,12 @@ class MySet {
     this.set = []
   }
   add(val) {
-    if (!this.has(val)) {
+    if (!this.set.has(val)) {
       return this.set.push(val)
     }
   }
   delete(val) {
-  if (this.has(val)) {
+  if (this.set.has(val)) {
     var index = this.set.indexOf(val)
     this.set.splice(index, 1)
   }
@@ -39,7 +39,7 @@ class MySet {
   return this.set.includes(val)
   }
   get size() {
-    return this._set.length
+    return this.set.length
   }
 }
 
