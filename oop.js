@@ -22,20 +22,24 @@ class MyMap {
 
 class MySet {
   constructor () {
-    this._set = {}
-    this.count = 0
+    this.set = []
   }
   add(val) {
-    return this._set.add(val)
+    if (!this.has(val)) {
+      return this.set.push(val)
+    }
   }
   delete(val) {
-  return this._set.delete(val)
+  if (this.has(val)) {
+    var index = this.set.indexOf(val)
+    this.set.splice(index, 1)
+  }
   }
   has(val) {
-    return this._set.has(val)
+  return this.set.includes(val)
   }
   get size() {
-    return this._set.count
+    return this._set.length
   }
 }
 
@@ -44,12 +48,12 @@ constructor(x, y) {
   this.x = x
   this.y = y
 }
-add(Vector) {
+plus(Vector) {
   var x = this.x + Vector.x
   var y = this.y + Vector.y
   return new Vector(x, y)
 }
-subtract(Vector) {
+minus(Vector) {
   var x = this.x - Vector.x
   var y = this.y - Vector.y
   return new Vector(x, y)
@@ -80,7 +84,7 @@ class Complex {
     return new Complex(real, imaginary)
   }
   div(Complex) {
-    var helper = new Complex(Complex.real, -Complex.imaginary)
+    var helper = new Complex(this.real, -this.imaginary)
     var up = this.mul(helper)
     var down = Complex.mul(helper)
     var real = up.real / down.real
@@ -90,7 +94,7 @@ class Complex {
 }
 
 class Stack {
-  constructor (head) {
+  constructor() {
   this.head = null
   this.nodeCount = 0
   }
@@ -146,10 +150,10 @@ class Queue {
       this.head = this.tail = null
       return res
     }
+    this.count++
     let res = this.head.val
     this.head = this.head.next
     return res
-    this.count++
   }
   get size() {
     return this.count
@@ -157,7 +161,7 @@ class Queue {
 }
 
 class LinkedList {
-  constructor (head, tail) {
+  constructor(head, tail) {
     this.head = null
     this.tail = null
   }
@@ -165,7 +169,7 @@ class LinkedList {
     var node = {
       val, next: null
     }
-    if (!head) {
+    if (!this.head) {
       this.head = this.tail = node
       return
     } else {
