@@ -20,7 +20,7 @@ class MyMap {
   }
 }
 
-class MaySet {
+class MySet {
   constructor () {
     this._set = {}
     this.count = 0
