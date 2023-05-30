@@ -25,12 +25,12 @@ class MySet {
     this.set = []
   }
   add(val) {
-    if (!this.set.has(val)) {
+    if (!this.has(val)) {
       return this.set.push(val)
     }
   }
   delete(val) {
-  if (this.set.has(val)) {
+  if (this.has(val)) {
     var index = this.set.indexOf(val)
     this.set.splice(index, 1)
   }
