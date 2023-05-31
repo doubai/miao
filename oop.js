@@ -5,6 +5,7 @@ class MyMap {
   }
   set(key, val) {
   this._map[key] = val
+  this._count++
   }
   get(key) {
     return this._map[key]
@@ -19,6 +20,11 @@ class MyMap {
     return this.count
   }
 }
+var a = new MyMap()
+a.set('foo', 1)
+a.set('bar', 2)
+a.set('foo', 3)
+a.delete("foo")
 
 class MySet {
   constructor () {
@@ -48,50 +54,58 @@ constructor(x, y) {
   this.x = x
   this.y = y
 }
-plus(Vector) {
-  var x = this.x + Vector.x
-  var y = this.y + Vector.y
+plus(vector) {
+  var x = this.x + vector.x
+  var y = this.y + vector.y
   return new Vector(x, y)
 }
-minus(Vector) {
-  var x = this.x - Vector.x
-  var y = this.y - Vector.y
+minus(vector) {
+  var x = this.x - vector.x
+  var y = this.y - vector.y
   return new Vector(x, y)
 }
 get length() {
   return Math.sqrt(this.x * this.x + this.y * this.y)
 }
 }
+var a = new Vector(1,2)
+var b = new Vector(2,2)
+var c = a.plus(b)
+var d = a.minus(b)
 
 class Complex {
   constructor(real, imaginary) {
     this.real = real
     this.imaginary = imaginary
     }
-  add(Complex) {
-    var real = this.real + Complex.real
-    var imaginary = this.imaginary + Complex.imaginary
+  add(complex) {
+    var real = this.real + complex.real
+    var imaginary = this.imaginary + complex.imaginary
     return new Complex(real, imaginary)
   }
-  subtract(Complex) {
-    var real = this.real - Complex.real
-    var imaginary = this.imaginary - Complex.imaginary
+  subtract(complex) {
+    var real = this.real - complex.real
+    var imaginary = this.imaginary - complex.imaginary
     return new Complex(real, imaginary)
   }
-  multiply(Complex) {
-    var real = this.real * Complex.real
-    var imaginary = this.imaginary * Complex.imaginary
+  multiply(complex) {
+    var real = this.real * complex.real
+    var imaginary = this.imaginary * complex.imaginary
     return new Complex(real, imaginary)
   }
-  div(Complex) {
+  div(complex) {
     var helper = new Complex(this.real, -this.imaginary)
-    var up = this.mul(helper)
-    var down = Complex.mul(helper)
+    var up = this.multiply(helper)
+    var down = complex.multiply(helper)
     var real = up.real / down.real
     var imaginary = up.imaginary / down.real
     return new Complex(real, imaginary)
   }
 }
+var a = new Complex(1,2)
+var b = new Complex(2,4)
+var c = a.div(b)
+
 
 class Stack {
   constructor() {
@@ -161,7 +175,7 @@ class Queue {
 }
 
 class LinkedList {
-  constructor(head, tail) {
+  constructor() {
     this.head = null
     this.tail = null
   }
