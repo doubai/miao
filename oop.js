@@ -20,11 +20,7 @@ class MyMap {
     return this.count
   }
 }
-var a = new MyMap()
-a.set('foo', 1)
-a.set('bar', 2)
-a.set('foo', 3)
-a.delete("foo")
+
 
 class MySet {
   constructor () {
@@ -68,10 +64,7 @@ get length() {
   return Math.sqrt(this.x * this.x + this.y * this.y)
 }
 }
-var a = new Vector(1,2)
-var b = new Vector(2,2)
-var c = a.plus(b)
-var d = a.minus(b)
+
 
 class Complex {
   constructor(real, imaginary) {
@@ -102,9 +95,7 @@ class Complex {
     return new Complex(real, imaginary)
   }
 }
-var a = new Complex(1,2)
-var b = new Complex(2,4)
-var c = a.div(b)
+
 
 
 class Stack {
@@ -121,7 +112,7 @@ class Stack {
     this.head = node
     } else {
       node.next = this.head
-      this.node = head
+      this.head = node
     }
     this.nodeCount++
   }
@@ -151,10 +142,9 @@ class Queue {
     }
     if (!this.head) {
       this.head = this.tail = node
-    } else {
-      this.tail.next = node
-      this.tail = node
     }
+    this.tail.next = node
+    this.tail = node
     this.count++
   }
   pop() {
@@ -164,7 +154,7 @@ class Queue {
       this.head = this.tail = null
       return res
     }
-    this.count++
+    this.count--
     let res = this.head.val
     this.head = this.head.next
     return res
