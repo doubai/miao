@@ -214,6 +214,7 @@ class LinkedList {
     return count
   }
 }
+
   class priorityQueue {
     constructor (initials = [], predicate = it => it) {
       if (typeof predicate !== 'function') {
@@ -277,4 +278,11 @@ class LinkedList {
     get size() {
       return this._elements.length
     }
+  }
+  function heapify(ary) {
+    var start = (ary.length - 1) >> 1
+    for (var i = start; i >= 0; i--) {
+      heapDown2(ary, i)
+    }
+    return ary
   }
