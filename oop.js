@@ -309,3 +309,13 @@ class LinkedList {
     array[j] = t
   }
 
+  function heapSort(ary) {
+    heapify(ary)
+
+    for (var i = ary.length - 1; i > 0; i--) {
+      swap(ary, i, 0)
+      heapDown2(ary, 0, i)
+    }
+    return ary
+  }
+
