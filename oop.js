@@ -282,7 +282,7 @@ class LinkedList {
   function heapify(ary) {
     var start = (ary.length - 1) >> 1
     for (var i = start; i >= 0; i--) {
-      heapDown2(ary, i)
+      heapDown(ary, i)
     }
     return ary
   }
@@ -311,10 +311,9 @@ class LinkedList {
 
   function heapSort(ary) {
     heapify(ary)
-
     for (var i = ary.length - 1; i > 0; i--) {
       swap(ary, i, 0)
-      heapDown2(ary, 0, i)
+      heapDown(ary, 0, i)
     }
     return ary
   }
