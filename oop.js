@@ -272,49 +272,29 @@ class LinkedList {
       this.heapDown(0)
       return res
     }
+    heapify(ary) {
+      var start = (ary.length - 1) >> 1
+      for (var i = start; i >= 0; i--) {
+        heapDown(ary, i)
+      }
+      return ary
+    }
+     heapSort(ary) {
+      heapify(ary)
+      for (var i = ary.length - 1; i > 0; i--) {
+        swap(ary, i, 0)
+        heapDown(ary, 0, i)
+      }
+      return ary
+    }
     peek() {
       return this._elements[0]
     }
     get size() {
       return this._elements.length
-    }
-  }
-  function heapify(ary) {
-    var start = (ary.length - 1) >> 1
-    for (var i = start; i >= 0; i--) {
-      heapDown(ary, i)
-    }
-    return ary
-  }
 
-  function heapDown(heap, pos, stop = heap.length) {
-    var leftPos = 2 * pos + 1
-    var rightPos = 2 * pos + 2
-    var maxIdx = pos
-    if (leftPos < stop && heap[leftPos] > heap[maxIdx]) {
-      maxIdx = leftPos
-    }
-    if (rightPos < stop && heap[rightPos] > heap[maxIdx]) {
-      maxIdx = rightPos
-    }
-    if (maxIdx !== pos) {
-      swap(heap, maxIdx, pos)
-      heapDown(heap, maxIdx, stop)
     }
   }
 
-  function swap(array, i, j) {
-    var t = array[i]
-    array[i] = array[j]
-    array[j] = t
-  }
 
-  function heapSort(ary) {
-    heapify(ary)
-    for (var i = ary.length - 1; i > 0; i--) {
-      swap(ary, i, 0)
-      heapDown(ary, 0, i)
-    }
-    return ary
-  }
 
