@@ -286,3 +286,26 @@ class LinkedList {
     }
     return ary
   }
+
+  function heapDown(heap, pos, stop = heap.length) {
+    var leftPos = 2 * pos + 1
+    var rightPos = 2 * pos + 2
+    var maxIdx = pos
+    if (leftPos < stop && heap[leftPos] > heap[maxIdx]) {
+      maxIdx = leftPos
+    }
+    if (rightPos < stop && heap[rightPos] > heap[maxIdx]) {
+      maxIdx = rightPos
+    }
+    if (maxIdx !== pos) {
+      swap(heap, maxIdx, pos)
+      heapDown(heap, maxIdx, stop)
+    }
+  }
+
+  function swap(array, i, j) {
+    var t = array[i]
+    array[i] = array[j]
+    array[j] = t
+  }
+
