@@ -1,20 +1,20 @@
 class MyMap {
   constructor () {
-    this._map = {}
+    this.map = {}
     this.count = 0
   }
   set(key, val) {
-  this._map[key] = val
-  this._count++
+  this.map[key] = val
+  this.count++
   }
   get(key) {
-    return this._map[key]
+    return this.map[key]
   }
   has(key) {
-    return key in this._map
+    return key in this.map
   }
   delete(key) {
-    return delete this._map[key]
+    return delete this.map[key]
   }
   get size() {
     return this.count
@@ -220,53 +220,53 @@ class LinkedList {
       if (typeof predicate !== 'function') {
         throw new TypeError('predicate must be a function, got:' + predicate)
       }
-      this._elements = []
-      this._predicate = predicate
+      this.elements = []
+      this.predicate = predicate
       for (var item of initials) {
         this.push(item)
       }
     }
-    _swap(i, j) {
-      var t = this._elements[i]
-      this._elements[i] = this.elements[j]
+    swap(i, j) {
+      var t = this.elements[i]
+      this.elements[i] = this.elements[j]
       this.elements[j] = t
     }
-    _heapUp(pos) {
+    heapUp(pos) {
       if (pos == 0) return
-      var predicate = this._predicate
+      var predicate = this.predicate
       var parentPos = (pos - 1) >> 1
-      if (predicate(this._elements[pos]) > predicate(this._elements[parentPos])) {
-        this._swap(pos, parentPos)
-        this._heapUp(parentPos)
+      if (predicate(this.elements[pos]) > predicate(this.elements[parentPos])) {
+        this.swap(pos, parentPos)
+        this.heapUp(parentPos)
       }
     }
-    _heapDown(pos) {
+    heapDown(pos) {
       var leftPos = 2 * pos + 1
       var rightPos = 2 * pos + 2
       var maxIdx = pos
-      var predicate = this._predicate
-      if (leftPos < this._elements.length && predicate(this._elements[leftPos]) > predicate(this._elements[maxIdx])) {
+      var predicate = this.predicate
+      if (leftPos < this.elements.length && predicate(this.elements[leftPos]) > predicate(this.elements[maxIdx])) {
         maxIdx = leftPos
       }
-      if (rightPos < this._elements.length && predicate(this._elements[rightPos]) > predicate(this.elements[maxIdx])) {
+      if (rightPos < this.elements.length && predicate(this.elements[rightPos]) > predicate(this.elements[maxIdx])) {
         maxIdx = rightPos
       }
       if (maxIdx !== pos) {
-        this._swap(maxIdx, pos)
-        this._heapDown(maxIdx)
+        this.swap(maxIdx, pos)
+        this.heapDown(maxIdx)
       }
     }
     push(val) {
-      this._elements.push(val)
-      this._heapUp(this._elements.length - 1)
+      this.elements.push(val)
+      this.heapUp(this.elements.length - 1)
       return this
     }
     pop() {
-      if (this._elements.length == 0) return
-      if (this._elements.length == 1) {
+      if (this.elements.length == 0) return
+      if (this.elements.length == 1) {
         return this.elements.pop()
       }
-      var res = this._elements[0]
+      var res = this.elements[0]
       var last = this.elements.pop()
       this.elements[0] = last
       this.heapDown(0)
@@ -288,10 +288,10 @@ class LinkedList {
       return ary
     }
     peek() {
-      return this._elements[0]
+      return this.elements[0]
     }
     get size() {
-      return this._elements.length
+      return this.elements.length
 
     }
   }
