@@ -215,151 +215,151 @@ class LinkedList {
   }
 }
 
-  var heap = [1,4,7,21,88,3,7,213,5,8,1]
- // 从堆里删除堆顶元素并维护堆的性质
-function pop(heap) {
-  // 如果堆为空，返回undefined
-  if (heap.length == 0) {
-    return undefined
-  }
-  // 如果堆只有一个元素，将其删除并返回
-  if (heap.length == 1) {
-    return heap.pop()
-  }
-  // 保存堆顶元素
-  var result = heap[0]
-  // 将堆的最后一个元素移动到堆顶
-  var last = heap.pop()
-  heap[0] = last
-  // 从堆顶开始向下维护堆的性质
-  heapDown(heap, 0)
-  // 返回原堆顶元素
-  return result
-}
+//   var heap = [1,4,7,21,88,3,7,213,5,8,1]
+//  // 从堆里删除堆顶元素并维护堆的性质
+// function pop(heap) {
+//   // 如果堆为空，返回undefined
+//   if (heap.length == 0) {
+//     return undefined
+//   }
+//   // 如果堆只有一个元素，将其删除并返回
+//   if (heap.length == 1) {
+//     return heap.pop()
+//   }
+//   // 保存堆顶元素
+//   var result = heap[0]
+//   // 将堆的最后一个元素移动到堆顶
+//   var last = heap.pop()
+//   heap[0] = last
+//   // 从堆顶开始向下维护堆的性质
+//   heapDown(heap, 0)
+//   // 返回原堆顶元素
+//   return result
+// }
 
-function push(heap, val) {
-  heap.push(val)
-  heapUp(heap, heap.length - 1)
-  return heap
-}
+// function push(heap, val) {
+//   heap.push(val)
+//   heapUp(heap, heap.length - 1)
+//   return heap
+// }
 
-function heapUp(heap, pos) {
-  if (pos == 0) {
-    return
-  }
-  var parentPos = (pos - 1) >> 1
-  if (heap[pos] > heap[parentPos]) {
-    swap(heap, pos, parentPos)
-    heapUp(heap, parentPos)
-  }
-}
+// function heapUp(heap, pos) {
+//   if (pos == 0) {
+//     return
+//   }
+//   var parentPos = (pos - 1) >> 1
+//   if (heap[pos] > heap[parentPos]) {
+//     swap(heap, pos, parentPos)
+//     heapUp(heap, parentPos)
+//   }
+// }
 
-function heapUp2(heap, pos) {
-  for (;;) {
-    var parentPos = (pos - 1) >> 1
-    if (heap[pos] > heap[parentPos]) {
-      swap(heap, pos, parentPos)
-      pos = parentPos
-    }
-  }
-}
+// function heapUp2(heap, pos) {
+//   for (;;) {
+//     var parentPos = (pos - 1) >> 1
+//     if (heap[pos] > heap[parentPos]) {
+//       swap(heap, pos, parentPos)
+//       pos = parentPos
+//     }
+//   }
+// }
 
-function swap(array, i, j) {
-  var t = array[i]
-  array[i] = array[j]
-  array[j] = t
-}
-// 从pos位置开始向下调整
-  // pos位置的左右子树都是合法的堆
-  // stop表示只认为数组中小于stop位置的元素是堆中的元素
-  // 用以后面的堆排序代码
-  function heapDown(heap, pos, stop = heap.length) {
-    var leftPos = 2 * pos + 1
-    var rightPos = 2 * pos + 2
-    var maxIdx = pos
-    if (leftPos < stop && heap[leftPos] > heap[maxIdx]) {
-      maxIdx = leftPos
-    }
-    if (rightPos < stop && heap[rightPos] > heap[maxIdx]) {
-      maxIdx = rightPos
-    }
-    if (maxIdx !== pos) {
-      swap(heap, maxIdx, pos)
-      heapDown(heap, maxIdx, stop)
-    }
-  }
+// function swap(array, i, j) {
+//   var t = array[i]
+//   array[i] = array[j]
+//   array[j] = t
+// }
+// // 从pos位置开始向下调整
+//   // pos位置的左右子树都是合法的堆
+//   // stop表示只认为数组中小于stop位置的元素是堆中的元素
+//   // 用以后面的堆排序代码
+//   function heapDown(heap, pos, stop = heap.length) {
+//     var leftPos = 2 * pos + 1
+//     var rightPos = 2 * pos + 2
+//     var maxIdx = pos
+//     if (leftPos < stop && heap[leftPos] > heap[maxIdx]) {
+//       maxIdx = leftPos
+//     }
+//     if (rightPos < stop && heap[rightPos] > heap[maxIdx]) {
+//       maxIdx = rightPos
+//     }
+//     if (maxIdx !== pos) {
+//       swap(heap, maxIdx, pos)
+//       heapDown(heap, maxIdx, stop)
+//     }
+//   }
 
-  function heapDown2(heap, pos, stop = heap.length) {
-    for (;;) {
-      var leftPos = 2 * pos + 1
-      var rightPos = 2 * pos + 2
-      var maxIdx = pos
-      if (leftPos < stop && heap[rightPos] > heap[maxIdx]) {
-        maxIdx = rightPos
-      }
-      if (rigthPos < stop && heap[rightPos] > heap[maxIdx]) {
-        maxIdx = rightPos
-      }
-      if (maxIdx !== pos) {
-        swap(heap, maxIdx, pos)
-        pos = maxIdx
-      } else {
-        break
-      }
-    }
-  }
+//   function heapDown2(heap, pos, stop = heap.length) {
+//     for (;;) {
+//       var leftPos = 2 * pos + 1
+//       var rightPos = 2 * pos + 2
+//       var maxIdx = pos
+//       if (leftPos < stop && heap[rightPos] > heap[maxIdx]) {
+//         maxIdx = rightPos
+//       }
+//       if (rigthPos < stop && heap[rightPos] > heap[maxIdx]) {
+//         maxIdx = rightPos
+//       }
+//       if (maxIdx !== pos) {
+//         swap(heap, maxIdx, pos)
+//         pos = maxIdx
+//       } else {
+//         break
+//       }
+//     }
+//   }
 
-  class PriorityQueue2 {
-    constructor() {
-      this._elements = []
-    }
-    _swap(i, j) {
-      var t = this._elements[i]
-      this._elements[i] = this._elements[j]
-      tis.elements[j] = t
-    }
-    _heapUp(pos) {
-      if (pos == 0) return
-      var parentPos = (pos - 1) >> 1
-      if (this._elements[pos] > this._elements[parentPos]) {
-        this._swap(pos, parentPos)
-        this._heapUp(parentPos)
-      }
-    }
-    _heapDown(pos) {
-      var leftPos = 2 * pos + 1
-      var rightPos = 2 * pos + 2
-      var maxIdx = pos
-      if (leftPos < this.elements.length && this._elsements[ledtPos] > this.elements[msxIdx]) {
-        maxIdx = leftPos
-      }
-      if (rightPos < this._elements.length && this._elements[rightPos] > this._elements[maxIdx]) {
-        maxIdx = rigthPos
-      }
-      if (maxIdx !== pos) {
-        this._swap(maxIDx, pos)
-        this._heapDown(maxIdx)
-      }
-    }
-    push(val) {
-      this._elements.push(val)
-      this._heapUp(this.elements.length - 1)
-      return this
-    }
-    pop() {
-      if (this._elements.length == 0) {
-        return
-      }
-      if (this._elements.length == 1) {
-        return this._elements.pop()
-      }
-      var res = this._elements[0]
-      var last = this._elements.pop()
-      this.elements[0] = last
-      this.heapDown(0)
-      return res
-    }
-  }
+//   class PriorityQueue2 {
+//     constructor() {
+//       this._elements = []
+//     }
+//     _swap(i, j) {
+//       var t = this._elements[i]
+//       this._elements[i] = this._elements[j]
+//       tis.elements[j] = t
+//     }
+//     _heapUp(pos) {
+//       if (pos == 0) return
+//       var parentPos = (pos - 1) >> 1
+//       if (this._elements[pos] > this._elements[parentPos]) {
+//         this._swap(pos, parentPos)
+//         this._heapUp(parentPos)
+//       }
+//     }
+//     _heapDown(pos) {
+//       var leftPos = 2 * pos + 1
+//       var rightPos = 2 * pos + 2
+//       var maxIdx = pos
+//       if (leftPos < this.elements.length && this._elsements[ledtPos] > this.elements[msxIdx]) {
+//         maxIdx = leftPos
+//       }
+//       if (rightPos < this._elements.length && this._elements[rightPos] > this._elements[maxIdx]) {
+//         maxIdx = rigthPos
+//       }
+//       if (maxIdx !== pos) {
+//         this._swap(maxIDx, pos)
+//         this._heapDown(maxIdx)
+//       }
+//     }
+//     push(val) {
+//       this._elements.push(val)
+//       this._heapUp(this.elements.length - 1)
+//       return this
+//     }
+//     pop() {
+//       if (this._elements.length == 0) {
+//         return
+//       }
+//       if (this._elements.length == 1) {
+//         return this._elements.pop()
+//       }
+//       var res = this._elements[0]
+//       var last = this._elements.pop()
+//       this.elements[0] = last
+//       this.heapDown(0)
+//       return res
+//     }
+//   }
 
   class priorityQueue {
     constructor (initials = [], predicate = it => it) {
