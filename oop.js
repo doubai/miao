@@ -215,7 +215,7 @@ class LinkedList {
   }
 }
 
-  class priorityQueue {
+  class PriorityQueue {
     constructor (initials = [], predicate = it => it) {
       if (typeof predicate !== 'function') {
         throw new TypeError('predicate must be a function, got:' + predicate)
@@ -295,6 +295,4 @@ class LinkedList {
 
     }
   }
-
-
 
