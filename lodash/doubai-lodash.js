@@ -59,5 +59,10 @@ differenceBy: (array1, array2, iteratee = identify => identify) => {
  * @param {*} n
  * @returns (Array): 返回array剩余切片。
  */
-drop: (array, n = 1) => array.slice(n)
+drop: (array, n = 1) => array.slice(n),
+
+drop: (array, n = 1) => {
+  const res = array.slice(n)
+  res.reverse()
+}
 }
