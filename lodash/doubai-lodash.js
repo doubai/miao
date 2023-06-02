@@ -61,8 +61,14 @@ differenceBy: (array1, array2, iteratee = identify => identify) => {
  */
 drop: (array, n = 1) => array.slice(n),
 
-drop: (array, n = 1) => {
+/**
+ * 创建一个切片数组，去除array尾部的n个元素。（n默认值为1。）
+ * @param {*} array
+ * @param {*} n
+ */
+dropRight: (array, n = 1) => {
   const res = array.slice(n)
   res.reverse()
+  return res
 }
 }
