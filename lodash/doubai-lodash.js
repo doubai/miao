@@ -9,7 +9,7 @@ var doubai = {
    */
   chunk: function(array, size) {
     var res = []
-    for (var i = 0; i < array.length - 1; i += size) {
+    for (var i = 0; i < array.length; i += size) {
       res.push(array.slice(i, i + size))
     }
     return res
