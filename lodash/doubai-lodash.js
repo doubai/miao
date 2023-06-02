@@ -40,5 +40,16 @@ var doubai = {
   difference: (array, ...args) => {
   const set2 = new Set(...args);
   return array.filter(item => !set2.has(item));
+},
+/**
+ * 这个方法类似_.difference ，除了它接受一个 iteratee （注：迭代器）， 调用array 和 values 中的每个元素以产生比较的标准。 结果值是从第一数组中选择。iteratee 会调用一个参数：(value)。（注：首先使用迭代器分别迭代array 和 values中的每个元素，返回的值作为比较值）。
+ * @param {*} array1
+ * @param {*} array2
+ * @param {*} iteratee
+ * @returns (Array): 返回一个过滤值后的新数组。
+ */
+differenceBy: (array1, array2, iteratee = identify => identify) => {
+  const set2 = new Set(array2.map(iteratee));
+  return array1.filter(item => !set2.has(iteratee(item)));
 }
 }
