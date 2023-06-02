@@ -51,5 +51,13 @@ var doubai = {
 differenceBy: (array1, array2, iteratee = identify => identify) => {
   const set2 = new Set(array2.map(iteratee));
   return array1.filter(item => !set2.has(iteratee(item)));
-}
+},
+
+/**
+ * 创建一个切片数组，去除array前面的n个元素。（n默认值为1。）
+ * @param {*} array
+ * @param {*} n
+ * @returns (Array): 返回array剩余切片。
+ */
+drop: (array, n = 1) => array.slice(n)
 }
