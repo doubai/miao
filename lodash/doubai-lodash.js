@@ -65,10 +65,14 @@ drop: (array, n = 1) => array.slice(n),
  * 创建一个切片数组，去除array尾部的n个元素。（n默认值为1。）
  * @param {*} array
  * @param {*} n
+ * @returns (Array): 返回array剩余切片。
  */
 dropRight: (array, n = 1) => {
-  const res = array.slice(n)
-  res.reverse()
-  return res
+const l = array.length - n
+if (array.length <= n) {
+  return []
+} else {
+  return array.slice(0, l)
+}
 }
 }
