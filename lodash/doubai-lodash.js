@@ -84,5 +84,17 @@ if (array.length <= n) {
 } else {
   return array.slice(0, l)
 }
+},
+/**
+ * 创建一个切片数组，去除array中从 predicate 返回假值开始到尾部的部分。predicate 会传入3个参数： (value, index, array)。
+ * @param {*} array
+ * @param {*} predicate
+ * @returns (Array): 返回array剩余切片。
+ */
+dropRightWhile: (array, predicate = identity) => {
+  while (array.length && predicate(array[array.length - 1])) {
+    array.pop()
+  }
+  return array
 }
 }
