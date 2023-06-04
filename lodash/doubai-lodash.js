@@ -54,6 +54,16 @@ differenceBy: (array1, array2, iteratee = identify => identify) => {
 },
 
 /**
+ * 这个方法类似_.difference ，除了它接受一个 comparator （注：比较器），它调用比较array，values中的元素。 结果值是从第一数组中选择。comparator 调用参数有两个：(arrVal, othVal)。
+ * @param {*} array1
+ * @param {*} array2
+ * @param {*} comparator
+ * @returns (Array): 返回一个过滤值后的新数组。
+ */
+differenceWith: (array1, array2, comparator) => {
+  return array.filter(a => !values.some(b => comparator(a, b)))
+},
+/**
  * 创建一个切片数组，去除array前面的n个元素。（n默认值为1。）
  * @param {*} array
  * @param {*} n
