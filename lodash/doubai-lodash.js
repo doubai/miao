@@ -92,6 +92,9 @@ if (array.length <= n) {
  * @returns (Array): 返回array剩余切片。
  */
 dropRightWhile: (array, predicate = identity) => {
+  if (array.length == 0) {
+    return []
+  }
   while (array.length && predicate(array[array.length - 1])) {
     array.pop()
   }
@@ -104,10 +107,35 @@ dropRightWhile: (array, predicate = identity) => {
  * @returns (Array): 返回array剩余切片。
  */
 dropWhile: (array, predicate = identity) => {
+  if (array.length == 0) {
+    return []
+  }
   let idx = 0;
   while (idx < array.length && predicate(array[idx], idx, array)) {
     idx++;
   }
   return array.slice(idx);
+},
+
+/**
+ * 使用 value 值来填充（替换） array，从start位置开始, 到end位置结束（但不包含end位置）。
+ * @param {*} array
+ * @param {*} val
+ * @param {*} start
+ * @param {*} end
+ * 返回array
+ */
+fill: (array, val, start = 0, end = array.length) => {
+  array.map((currentValue, index) => {
+    if (index >= start && index < end) {
+      return value;
+    } else {
+      return currentValue;
+    }
+})
 }
+
+
+
+
 }
