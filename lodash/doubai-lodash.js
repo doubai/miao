@@ -61,7 +61,7 @@ differenceBy: (array1, array2, iteratee = identify => identify) => {
  * @returns (Array): 返回一个过滤值后的新数组。
  */
 differenceWith: (array1, array2, comparator) => {
-  return array.filter(a => !values.some(b => comparator(a, b)))
+  return array1.filter(a => !array2.some(b => comparator(a, b)))
 },
 /**
  * 创建一个切片数组，去除array前面的n个元素。（n默认值为1。）
