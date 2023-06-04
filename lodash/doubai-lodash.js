@@ -96,5 +96,18 @@ dropRightWhile: (array, predicate = identity) => {
     array.pop()
   }
   return array
+},
+/**
+ * 创建一个切片数组，去除array中从起点开始到 predicate 返回假值结束部分。predicate 会传入3个参数： (value, index, array)。
+ * @param {*} array
+ * @param {*} predicate
+ * @returns (Array): 返回array剩余切片。
+ */
+dropWhile: (array, predicate = identity) => {
+  let idx = 0;
+  while (idx < array.length && predicate(array[idx], idx, array)) {
+    idx++;
+  }
+  return array.slice(idx);
 }
 }
