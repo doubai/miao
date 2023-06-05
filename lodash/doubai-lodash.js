@@ -159,13 +159,18 @@ return -1
  */
 findLastIndex: (array, predicate = identity, fromIndex = array.length-1) => {
   for (let i = fromIdex; i >= 0; i++) {
-    if (predicate(array[i]) = true) {
+    if (predicate(array[i]) == true) {
       return i
     }
   }
   return -1
 },
 
+/**
+ * 减少一级array嵌套深度。
+ * @param {*} array
+ * @returns (Array): 返回减少嵌套层级后的新数组。
+ */
 flatten: (array) => {
   return array.reduce(
     (result, item) =>
