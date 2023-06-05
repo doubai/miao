@@ -167,12 +167,19 @@ findLastIndex: (array, predicate = identity => (identify), fromIndex = array.len
  * @param {*} array
  * @returns (Array): 返回减少嵌套层级后的新数组。
  */
-flatten: array => {array.flat()
-},
+flatten: array => array.flat(),
 
+/**
+ * 与_.toPairs正好相反；这个方法返回一个由键值对pairs构成的对象。
+ * @param {*} pairs
+ * @returns (Object): 返回一个新对象。
+ */
 formPairs: (pairs) => {
   res = {}
-
+  for (let i = 0; i < pairs.length; i++) {
+    res[pairs[i][0]] = pairs[i][1]
+  }
+    return res
 }
 
 }
