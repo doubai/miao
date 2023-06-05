@@ -38,7 +38,7 @@ var doubai = {
   * @returns (Array): 返回一个过滤值后的新数组。
   */
   difference: (array, ...args) => {
-  const set2 = new Set(...args);
+  const set2 = new Set(args.flat());
   return array.filter(item => !set2.has(item));
 },
 /**
@@ -140,12 +140,8 @@ fill: (array, val, start = 0, end = array.length) => {
  * @returns (number): 返回找到元素的 索引值（index），否则返回 -1。
  */
 findIndex: (array, predicate = identity => (identify), fromIndex = 0) => {
-if (array.length == 0) return -1
-while (fromIndex < array.length) {
-if (predicate(array[fromIndex] == true)) {
-  return fromIndex
-}
-fromIndex++
+for (let i = formIndex; i <array.length; i++) {
+  if (this.baseIteratee(predicate)(array[i])) return i
 }
 return -1
 },
@@ -158,7 +154,7 @@ return -1
  * @returns (number): 返回找到元素的 索引值（index），否则返回 -1。
  */
 findLastIndex: (array, predicate = identity => (identify), fromIndex = array.length-1) => {
-  for (let i = fromIndex; i >= 0; i++) {
+  for (let i = fromIndex; i >= 0; i--) {
     if (predicate(array[i]) == true) {
       return i
     }
@@ -171,11 +167,12 @@ findLastIndex: (array, predicate = identity => (identify), fromIndex = array.len
  * @param {*} array
  * @returns (Array): 返回减少嵌套层级后的新数组。
  */
-flatten: array => {
-  return array.reduce(
-    (result, item) =>
-      Array.isArray(item)? result.concat(flatten(item)) : result.concat(item),[])
-}
+flatten: array => {array.flat()
+},
 
+formPairs: (pairs) => {
+  res = {}
+
+}
 
 }
