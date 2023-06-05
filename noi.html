@@ -908,18 +908,24 @@ var nx = n
 console.log(nx)
 </script>
 
-<script id="ch0105/38" type="perfect">
-var n = + prompt()
+<script id="ch0105/38" type="">
+  debugger
+var li = + prompt('组数')
+
+for (i = 1; i <= li; i++) {
+  var n = + prompt()
 if (n > 0) {
   do {
   var cn = + prompt()
   console.log(cn * n)
-  var n = n - 1
+   n = n - 1
 } while (n > 0)
 }
 if (n == 0) {
   console.log(0)
 }
+}
+
 </script>
 
 <script id="ch0105/39" type="perfect">
@@ -1048,15 +1054,302 @@ while () {
 }
 </script>
 
-<script>
-  function isPrime(n) {
-    var sqrt_n = Math.sqrt(n)
-  for (i = 2; i <= sqrt_n; i++) {
-    if () {
-      i = true
-    } else {
-      i = false
+<script id="lcf&lcm" type="perfect">
+  function lcf(a,b) {
+      for (c !== 0) {
+        c = a % b
+        a = b
+        b = c
+      }
+      console.log(a)
+    }
+</script>
+
+function itob(x, base = 10) {
+  var result = ''
+  do {
+    var g = x % base
+    result = digitToChar(g) + result
+    x = (x - g) / base
+  } while (x > 0)
+  return result
+}
+function digitToChar(digit) {
+  if (digit < 10) {
+    return String.fromCharCode(digit + 48)
+  } else {
+    return String.fromCharCode(digit + 65 - 10)
+  }
+}
+
+narcissistic: 输入一个数，判断是否是水仙花数
+narcissistics: 输出10000以内的水仙花数
+
+palindrom: 输入一个数，判断它数是否是回文数，如1223221
+
+
+complete-number: 输入一个数，判断它是否是完全数（自行查相关概念）
+
+function isCompleteNumber(n) {
+  var factorSum = 0
+
+  var stop = Math.sqrt(n)
+
+  for (var i = 1; i < stop; i++) {
+    if (n % i == 0) { // 如果i是因子，那么n/i是其对应的因子
+      factorSum += i + n / i
     }
   }
+
+  if (Number.isInteger(stop)) {
+    factorSum += stop
+  }
+
+  return factorSum == n
+}
+
+complete - numbers: 输出1000以内的完全数
+
+for (var i = 1; i <= 1000; i++) {
+  if (isCompleteNumber(n)) {
+    console.log(i)
+  }
+}
+
+prime: 输入一个数，判断它是否是素数
+
+  function isPrime(n) {
+    var stop = Math.sqrt(n)
+    for (var i = 2; i <= stop; i++) {
+      if (n % i == 0) {
+        return false
+      }
+    }
+    return true
+  }
+primes: 输出100以内的素数
+
+
+itob: 给定一个整数，将其转换为字符串：不能使用String等现成函数，但可以使用非此功能的其它函数，也不能利用任意运算符的自动类型转换
+  function itob(x) {
+    var result = ''
+    do {
+      var g = x % 10
+      result = digitToChar(g) + result
+      x = (x - g) / 10
+    } while (x > 0)
+  }
+  function digitToChar(digit) {
+    if (digit < 10) {
+      return String.fromCharCode(digit + 48)
+    } else {
+      return String.fromCharCode(digit + 65)
+    }
+  }
+
+
+lcf & lcm: 输入两个数，输出它们的最大公约数和最小公倍数
+
+  function largestCommonFactor(a, b) {
+    var c
+    do {
+      c = a % b
+      a = b
+      b = c
+    } while (c !== 0)
+    return b
+  }
+
+  function largestCommonFactor(a, b) {
+    while (a !== b) {
+      if (a < b) {
+        var t = a
+        a = b
+        b = t
+      }
+      var c = a - b
+      a = b
+      b = c
+    }
+    return a
+  }
+
+  function GCD(a, b) {
+      while(a == b) {
+          if (a > b) a -= b;
+          else b -= a;
+      }
+      return a;
+  }
+
+sqrt: 输入一个数，求它的平方根，精确到小数点后3位，不能使用Math.sqrt
+
+function sqrt(n) {
+  for (var i = 1; i < n; i += 0.00001) {
+    if (Math.abs(i * i - n) < 0.001) {
+      return i
+    }
+  }
+}
+
+// 二分法
+function sqrt(n) {
+  var left = 0
+  var right = n
+
+  while (right - left > 0.00000000001) {
+    var mid = (left + right) / 2
+    if (mid * mid > n) {
+      right = mid
+    } else if (mid * mid < n) {
+      left = mid
+    } else {
+      return mid
+    }
+  }
+
+  return (left + right) / 2
+}
+
+function sqrt(n) {
+  var x = n
+  for (var i = 0; i < 30; i++) {
+    x = (n / x + x) / 2
+  }
+  return x
+}
+
+weekday: 输入年份与月份，输出这个月的第一天是周几（视具体设定，周一可以用1或0表示）
+
+function getMonth天数(y, month) {
+  if (month == 2) {
+    if (y % 400 == 0 || y % 100 !== 0 && y % 4 == 0) {
+      return 29
+    } else {
+      return 28
+    }
+  } else {
+    switch (month) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        return 31
+      default:
+        return 30
+    }
+  }
+}
+function weekday(year, month) {
+  var daySum = 0
+  for (var i = 1; i < year; i++) {
+    if (i % 400 == 0 || i % 100 !== 0 && i % 4 == 0) {
+      daySum += 366
+    } else {
+      daySum += 365
+    }
+  }
+
+  for (var m = 1; m < month; m++) {
+    daySum += getMonth天数(year, m)
+  }
+
+  return (daySum + 1) % 7
+}
+
+function weekday2(year, month) {
+  var y = year - 1
+
+  var daySum = y * 365 + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400)
+
+  for (var m = 1; m < month; m++) {
+    daySum += getMonth天数(year, m)
+  }
+
+  return (daySum + 1) % 7
+}
+
+
+function sqrt(n) {
+  var x = n
+  var lastX = x
+
+  if (n < 0) {
+    return NaN
+  }
+  if (n == 0) {
+    return 0
+  }
+
+  while (true) {
+    x = (n / x + x) / 2
+    if (x === lastX) {
+      break
+    }
+    lastX = x
+  }
+
+  return x
+}
+
+
+<script>
+  function f(n) {
+    if (n == 1) {
+      return 1
+    }
+    else {
+      return n * f(n - 1)
+    }
+  }
+  f(3)
+</script>
+
+<script>
+  function g(a,b) {
+    if (a % b == 0) {
+      return b
+    } else {
+      return g(b,a%b)
+    }
+  }
+</script>
+
+<script>
+  function B(a,b) {
+    if (a == b) {
+      return a
+    } else if (a > b) {
+      return B(a-b, b)
+    } else {
+      return B(a, b - a)
+    }
+  }
+</script>
+
+<script>
+function solve(x, y, how) {
+  if (x == 5 && y == 3) {
+    console.log(how)
+    return
+  } else if (x > 5 || y > 3) {
+    return
+  }
+  solve(x + 1, y, how + '>')
+  solve(x, y + 1, how + 'v')
+}
+</script>
+
+<script>
+  function s(x, y, how) {
+    if (x == 10 && y == 6) {
+      console.log(how)
+    }
+    if (x > ) {
+
+    }
   }
 </script>
