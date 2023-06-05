@@ -180,6 +180,59 @@ formPairs: (pairs) => {
     res[pairs[i][0]] = pairs[i][1]
   }
     return res
+},
+
+/**
+ * 获取数组 array 的第一个元素。
+ * @param {*} array
+ * @returns (*): 返回数组 array的第一个元素。
+ */
+head: (array) => array[0],
+
+/**
+ * 使用SameValueZero 等值比较，返回首次 value 在数组array中被找到的 索引值， 如果 fromIndex 为负值，将从数组array尾端索引进行匹配。
+ * @param {*} array
+ * @param {*} val
+ * @param {*} fromIndex
+ * @returns (number): 返回 值value在数组中的索引位置, 没有找到为返回-1。
+ */
+indexOf: (array, val, fromIndex = 0) => {
+  for (let i = fromIndex; i < array.length; i++) {
+  if (array[i] == val) {
+  return i
+  }
+  }
+  return -1
+},
+
+/**
+ * 获取数组array中除了最后一个元素之外的所有元素（注：去除数组array中的最后一个元素）。
+ * @param {*} array
+ * @returns (Array): 返回截取后的数组array。
+ */
+initial: (array) => {
+  array.pop()
+  return array
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
