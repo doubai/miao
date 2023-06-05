@@ -150,6 +150,13 @@ fromIndex++
 return -1
 },
 
+/**
+ * 这个方式类似_.findIndex， 区别是它是从右到左的迭代集合array中的元素。
+ * @param {*} array
+ * @param {*} predicate
+ * @param {*} fromIndex
+ * @returns (number): 返回找到元素的 索引值（index），否则返回 -1。
+ */
 findLastIndex: (array, predicate = identity, fromIndex = array.length-1) => {
   for (let i = fromIdex; i >= 0; i++) {
     if (predicate(array[i]) = true) {
