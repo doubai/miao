@@ -128,9 +128,9 @@ dropWhile: (array, predicate = identity) => {
 fill: (array, val, start = 0, end = array.length) => {
   array.map((currentValue, index) => {
     if (index >= start && index < end) {
-      return value;
+      return val
     } else {
-      return currentValue;
+      return currentValue
     }
 })
 }
