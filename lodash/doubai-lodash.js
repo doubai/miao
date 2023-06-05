@@ -139,7 +139,7 @@ fill: (array, val, start = 0, end = array.length) => {
  * @param {*} fromIndex
  * @returns (number): 返回找到元素的 索引值（index），否则返回 -1。
  */
-findIndex: (array, predicate = identity, fromIndex = 0) => {
+findIndex: (array, predicate = identity => (identify), fromIndex = 0) => {
 if (array.length == 0) return -1
 while (fromIndex < array.length) {
 if (predicate(array[fromIndex] == true)) {
@@ -157,7 +157,7 @@ return -1
  * @param {*} fromIndex
  * @returns (number): 返回找到元素的 索引值（index），否则返回 -1。
  */
-findLastIndex: (array, predicate = identity, fromIndex = array.length-1) => {
+findLastIndex: (array, predicate = identity => (identify), fromIndex = array.length-1) => {
   for (let i = fromIndex; i >= 0; i++) {
     if (predicate(array[i]) == true) {
       return i
