@@ -242,5 +242,21 @@ intersection:(...arrays) => {
    * @param {*} array
    * @returns (*): 返回array中的最后一个元素
    */
-  last:(array) => array.at(-1)
+  last:(array) => array.at(-1),
+
+  /**
+   * 这个方法类似_.indexOf ，区别是它是从右到左遍历array的元素。
+   * @param {*} array
+   * @param {*} val
+   * @param {*} fromIndex
+   * @returns (number): 返回匹配值的索引值，否则返回 -1。
+   */
+  lastIndexOf:(array, val, fromIndex=array.length-1) => {
+    for (let i = array.length - 1; i >= fromIndex; i--) {
+      if (array[i] == val) {
+      return i
+      }
+      }
+      return -1
+  }
 }
