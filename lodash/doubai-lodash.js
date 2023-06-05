@@ -133,8 +133,24 @@ fill: (array, val, start = 0, end = array.length) => {
       return currentValue
     }
 })
-}
+},
 
+/**
+ * 该方法类似_.find，区别是该方法返回第一个通过 predicate 判断为真值的元素的索引值（index），而不是元素本身。
+ * @param {*} array
+ * @param {*} predicate
+ * @param {*} fromIndex
+ * @returns (number): 返回找到元素的 索引值（index），否则返回 -1。
+ */
+findIndex: (array, predicate = identity, fromIndex = 0) => {
+if (array.length == 0) return -1
+while (fromIdex < array.length) {
+if (predicate(array[fromIdex] == true)) {
+  return fromIdex
+}
+}
+return -1
+}
 
 
 
