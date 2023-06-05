@@ -167,7 +167,7 @@ findLastIndex: (array, predicate = identity, fromIndex = array.length-1) => {
 },
 
 flatten: (array) => {
-  
+
 }
 
 
