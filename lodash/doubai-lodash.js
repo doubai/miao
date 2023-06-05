@@ -281,5 +281,17 @@ intersection:(...arrays) => {
    */
  pull: (array, ...vals) => {
   return array.filter(item => !vals.includes(item))
- }
+ },
+
+ /**
+  * 这个方法类似_.pull，区别是这个方法接收一个要移除值的数组。
+  * @param {*} array
+  * @param {*} vals
+  * @returns (Array): 返回 array。
+  */
+ pullAll:(array, vals) => {
+  return array.filter(item => !vals.includes(item))
+ },
+
+ 
 }
