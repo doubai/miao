@@ -235,5 +235,12 @@ intersection:(...arrays) => {
    * @param {*} separator
    * @returns (string): 返回连接字符串。
    */
-  join: (array, separator = ',') => array.reduce((pre, next) =>pre + next + separator, '').slice(0, -1)
+  join: (array, separator = ',') => array.reduce((pre, next) =>pre + next + separator, '').slice(0, -1),
+
+  /**
+   * 获取array中的最后一个元素。
+   * @param {*} array
+   * @returns (*): 返回array中的最后一个元素
+   */
+  last:(array) => array.at(-1)
 }
