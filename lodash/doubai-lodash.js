@@ -175,7 +175,7 @@ flatten: array => array.flat(),
  * @returns (Object): 返回一个新对象。
  */
 fromPairs: (pairs) => {
-  res = {}
+  var res = {}
   for (let i = 0; i < pairs.length; i++) {
     res[pairs[i][0]] = pairs[i][1]
   }
@@ -215,7 +215,15 @@ initial: (array) => {
   return array
 },
 
-intersection:(arrays) =>
+intersection:(...arrays) => {
+  let res = arrays[0]
+  for (let i = 0; i < arrays.length; i++) {
+      let set = new Set(arrays[i])
+      res = res.filter((item) => set.has(item))
+  }
+  return res
+  }
+}
 
 
 
