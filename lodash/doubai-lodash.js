@@ -151,7 +151,12 @@ return -1
 },
 
 findLastIndex: (array, predicate = identity, fromIndex = array.length-1) => {
-  if ()
+  for (let i = fromIdex; i >= 0; i++) {
+    if (predicate(array[i]) = true) {
+      return i
+    }
+  }
+  return -1
 }
 
 
