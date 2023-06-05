@@ -252,11 +252,34 @@ intersection:(...arrays) => {
    * @returns (number): 返回匹配值的索引值，否则返回 -1。
    */
   lastIndexOf:(array, val, fromIndex=array.length-1) => {
-    for (let i = array.length - 1; i >= fromIndex; i--) {
+    for (let i = fromIndex; i >= 0; i--) {
       if (array[i] == val) {
       return i
       }
       }
       return -1
-  }
+  },
+
+  /**
+   * 获取array数组的第n个元素。如果n为负数，则返回从数组结尾开始的第n个元素。
+   * @param {*} array
+   * @param {*} n
+   * @returns (*): 获取array数组的第n个元素。
+   */
+  nth: (array, n = 0) => {
+    if (n >= 0) return array[n - 1]
+    else {
+      return array.at(n)
+    }
+  },
+
+  /**
+   * 移除数组array中所有和给定值相等的元素，使用SameValueZero 进行全等比较。
+   * @param {*} array
+   * @param  {...any} vals
+   * @returns (Array): 返回 array.
+   */
+ pull: (array, ...vals) => {
+  return array.filter(item => !vals.includes(item))
+ }
 }
