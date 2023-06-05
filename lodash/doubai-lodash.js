@@ -142,7 +142,7 @@ fill: (array, val, start = 0, end = array.length) => {
 findIndex: (array, predicate = identity, fromIndex = 0) => {
 if (array.length == 0) return -1
 while (fromIndex < array.length) {
-if (predicate(array[fromIdex] == true)) {
+if (predicate(array[fromIndex] == true)) {
   return fromIndex
 }
 fromIndex++
@@ -150,6 +150,9 @@ fromIndex++
 return -1
 },
 
+findLastIndex: (array, predicate = identity, fromIndex = array.length-1) => {
+  if ()
+}
 
 
 }
