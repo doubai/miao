@@ -174,7 +174,7 @@ flatten: array => array.flat(),
  * @param {*} pairs
  * @returns (Object): 返回一个新对象。
  */
-formPairs: (pairs) => {
+fromPairs: (pairs) => {
   res = {}
   for (let i = 0; i < pairs.length; i++) {
     res[pairs[i][0]] = pairs[i][1]
@@ -213,7 +213,9 @@ indexOf: (array, val, fromIndex = 0) => {
 initial: (array) => {
   array.pop()
   return array
-}
+},
+
+intersection:(arrays) =>
 
 
 
