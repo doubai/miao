@@ -126,13 +126,10 @@ dropWhile: (array, predicate = identity) => {
  * 返回array
  */
 fill: (array, val, start = 0, end = array.length) => {
-  array.map((currentValue, index) => {
-    if (index >= start && index < end) {
-      return val
-    } else {
-      return currentValue
-    }
-})
+ for (let i = start; i < end; i++) {
+ array[i] = val
+ }
+ return array
 },
 
 /**
@@ -144,13 +141,14 @@ fill: (array, val, start = 0, end = array.length) => {
  */
 findIndex: (array, predicate = identity, fromIndex = 0) => {
 if (array.length == 0) return -1
-while (fromIdex < array.length) {
+while (fromIndex < array.length) {
 if (predicate(array[fromIdex] == true)) {
-  return fromIdex
+  return fromIndex
 }
+fromIndex++
 }
 return -1
-}
+},
 
 
 
