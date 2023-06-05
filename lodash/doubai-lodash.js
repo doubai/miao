@@ -227,5 +227,13 @@ intersection:(...arrays) => {
       res = res.filter((item) => set.has(item))
   }
   return res
-  }
+  },
+
+  /**
+   * 将 array 中的所有元素转换为由 separator 分隔的字符串。
+   * @param {*} array
+   * @param {*} separator
+   * @returns (string): 返回连接字符串。
+   */
+  join: (array, separator = ',') => array.reduce((pre, next) =>pre + next + separator, '').slice(0, -1)
 }
