@@ -215,6 +215,11 @@ initial: (array) => {
   return array
 },
 
+/**
+ * 创建唯一值的数组，这个数组包含所有给定数组都包含的元素，使用SameValueZero进行相等性比较。（注：可以理解为给定数组的交集）
+ * @param  {...any} arrays
+ * @returns (Array): 返回一个包含所有传入数组交集元素的新数组。
+ */
 intersection:(...arrays) => {
   let res = arrays[0]
   for (let i = 0; i < arrays.length; i++) {
@@ -223,26 +228,4 @@ intersection:(...arrays) => {
   }
   return res
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
