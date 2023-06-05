@@ -171,7 +171,7 @@ findLastIndex: (array, predicate = identity, fromIndex = array.length-1) => {
  * @param {*} array
  * @returns (Array): 返回减少嵌套层级后的新数组。
  */
-flatten: (array) => {
+flatten: array => {
   return array.reduce(
     (result, item) =>
       Array.isArray(item)? result.concat(flatten(item)) : result.concat(item),[])
