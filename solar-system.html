@@ -5,99 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>solar-system</title>
   <style>
-    html,body{
-      height: 100%;
-      width: 100%;
-      margin: 0;
-    }
+
     .container {
-      width: 100%;
-      height: 100%;
       position: relative;
+      height: 600px;
+      width: 1000px;
     }
+   .sun {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+   }
 
-    .sun {
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      box-shadow: 0 0 20px lightcoral;
-    }
-
-    .earth {
-      width: 40px;
-      height: 40px;
-      background-color: aqua;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: calc(50% - 200px);
-      box-shadow: 0 0 20px lightblue;
-    }
-
-    .moon {
-      width: 20px;
-      height: 20px;
-      background-color: orange;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: calc(50% - 250px);
-      box-shadow: 0 0 20px lightyellow;
-    }
+   @keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+   .earth {
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+    border-radius: 50%;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+   }
+   .moon {
+    height: 25px;
+    width: 25px;
+    background-color:red;
+    border-radius: 50%;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+   }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="sun"></div>
-    <div class="earth"></div>
-    <div class="moon"></div>
+    <img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.9c6pFnTZd2MczuohDQQd9wHaHN?w=203&h=197&c=7&r=0&o=5&dpr=1.6&pid=1.7" alt="" class="sun">
+    <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.aE95UeaW2yp_qhd4MTtpggAAAA?w=191&h=190&c=7&r=0&o=5&dpr=1.6&pid=1.7" alt="" class="earth">
+    <img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.akC0Wf24J_i20v_b1wXsZwAAAA?w=127&h=180&c=7&r=0&o=5&dpr=1.6&pid=1.7" alt="" class="moon">
   </div>
 </body>
 <script>
-  // 获取地球和月球的 DOM 元素
-  var earth = document.querySelector(".earth");
-  var moon = document.querySelector(".moon");
+    const earth = document.querySelector(".earth");
+    const moon = document.querySelector('.moon')
+    const sun = document.querySelector('.sun')
 
-  // 获取容器的宽度和高度
-  var containerWidth = document.querySelector(".container").offsetWidth;
-  var containerHeight = document.querySelector(".container").offsetHeight;
-  // 设置地球和月球的半径
-  var earthRadius = containerWidth / 10;
-  var moonRadius = containerWidth / 30;
 
-  // 初始化地球和月球的角度
-  var earthAngle = 0;
-  var moonAngle = 0;
 
-  // 动画函数
-  function animate() {
-    // 计算地球在容器中的位置
-    var earthX = containerWidth / 2 + earthRadius * Math.cos(earthAngle);
-    var earthY = containerHeight / 2 + earthRadius * Math.sin(earthAngle);
-    earth.style.left = earthX + "px";
-    earth.style.top = earthY + "px";
+    requestAnimationFrame(function animate(time) {
 
-      // 计算月球在地球上的位置
-    var moonX =
-      earthX + moonRadius * Math.cos(moonAngle) + earth.offsetWidth / 2;
-    var moonY =
-      earthY + moonRadius * Math.sin(moonAngle) + earth.offsetHeight / 2;
-    moon.style.left = moonX + "px";
-    moon.style.top = moonY + "px";
+let sunAngle = time / 2000
+let sunX = 200 + 'px'
+let sunY = 200 + 'px'
+sun.style.left = sunX
+sun.style.top = sunY
 
-     // 更新地球和月球的角度
-    earthAngle += 0.01;
-    moonAngle += 0.03;
 
-     // 递归调用动画函数
-    requestAnimationFrame(animate);
-  }
+let earthAngle = time / 800
+let earthX = parseFloat(sunX) + Math.cos(earthAngle) * 200  + 'px'
+let earthY = parseFloat(sunY) + Math.sin(earthAngle) * 200  + 'px'
+earth.style.left = earthX
+earth.style.top = earthY
 
-  // 启动动画
-  animate();
+
+let moonAngle = time / 200
+let moonX = parseFloat(earthX) + Math.cos(moonAngle) * 60 + 'px'
+let moonY = parseFloat(earthY) + Math.sin(moonAngle) * 60 + 'px'
+moon.style.left = moonX
+moon.style.top = moonY
+
+requestAnimationFrame(animate)
+})
 </script>
 </html>
